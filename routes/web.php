@@ -4,12 +4,15 @@ use App\Http\Controllers\AdresseController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\TitreController;
 use App\Http\Controllers\VideoController;
 use App\Models\Adresse;
 use App\Models\Footer;
 use App\Models\Image;
 use App\Models\Link;
+use App\Models\Slider;
 use App\Models\Titre;
 use App\Models\Video;
 use Illuminate\Support\Facades\Route;
@@ -31,8 +34,9 @@ Route::get('/', function () {
     $video = Video::first();
     $footer = Footer::first();
     $images = Image::all(); 
+    $sliders = Slider::all(); 
     $adresse = Adresse::first();
-    return view('home',compact('footer', 'link', 'titres', 'video', 'images', 'adresse'));
+    return view('home',compact('footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders'));
 })->name('home');
 
 Route::get('/services', function () {
@@ -70,8 +74,9 @@ Route::get('/dashboard', function () {
     $video = Video::first();
     $footer = Footer::first();
     $images = Image::all(); 
-    $adresse = Adresse::first(); 
-    return view('dashboard',compact('footer', 'link', 'titres', 'video', 'images', 'adresse'));
+    $adresse = Adresse::first();
+    $sliders = Slider::all();  
+    return view('dashboard',compact('footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
@@ -90,3 +95,7 @@ Route::resource("/footer", FooterController::class)->middleware(['auth']);
 Route::resource("/image", ImageController::class)->middleware(['auth']);
 // Adresse
 Route::resource("/adresse", AdresseController::class)->middleware(['auth']);
+// Slider
+Route::resource("/slider", SliderController::class)->middleware(['auth']);
+//Route pour l'email (Contact.blade.php)
+Route::post("/send-mail", [MailController::class, "sendMail"]);

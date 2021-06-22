@@ -1,4 +1,5 @@
-	<!-- Contact section -->
+
+<!-- Contact section -->
 	<div class="contact-section spad fix">
 		<div class="container">
 			<div class="row">
@@ -14,8 +15,12 @@
 					<p class="con-item">{{ $adresse->email }}</p>
 				</div>
 				<!-- contact form -->
-				<div class="col-md-6 col-pull">
-					<form class="form-class" id="con_form">
+				<div class="col-md-6 col-pull"> 
+					@if (session("message_mail"))
+                    	<div>{{ session("message_mail") }}</div>
+                	@endif
+					<form action="/send-mail" method="post" class="form-class" id="con_form">
+						@csrf
 						<div class="row">
 							<div class="col-sm-6">
 								<input type="text" name="name" placeholder="Your name">

@@ -59,15 +59,6 @@
                             </div>
                         </a>
                     </div>
-                    <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
-                      <a href="{{ route('image.index') }}" class="block ">
-                          <div class="py-16 rounded overflow-hidden shadow-lg  flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
-                              <p class="text-white text-3xl p-2">Image</p>
-                              <img class="h-96 px-4 py-10" src="{{asset("img/" . $images[0]->img)}}" alt="">
-                              <p class="text-white opacity-50 font-light py-3">Gérer la section images</p>
-                          </div>
-                      </a>
-                    </div>
                   </div>
                 </div>
                 <!-- ./Contact Form -->
@@ -112,7 +103,34 @@
                             </div>
                         </a>
                     </div>
-                    <!-- link end -->
+                    <!-- adresse end -->
+                    <!-- slider -->
+                    <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                      <a href="{{ route('slider.index') }}" class="block ">
+                          <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
+                              <p class="text-white text-3xl">Slider</p>
+                              <img class="h-96 px-4 py-10" src="{{asset("img/" . $sliders[0]->img)}}" alt="">
+                              <p class="text-white opacity-50 font-light py-3">Gérer votre section slider</p>
+                          </div>
+                          <div class="buttons flex justify-center">
+                              @can('update', $sliders)
+                                  <a href="{{route('slider.edit',$sliders->id) }}" class="bg-indigo-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                              @endcan
+                          </div>
+                      </a>
+                    </div>
+                    <!-- slider end -->
+                    <!-- image -->
+                    <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                      <a href="{{ route('image.index') }}" class="block ">
+                        <div class="py-16 rounded overflow-hidden shadow-lg  flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
+                            <p class="text-white text-3xl p-2">Image</p>
+                            <img class="h-30 px-4 py-10" src="{{asset("img/" . $images[0]->img)}}" alt="">
+                            <p class="text-white opacity-50 font-light py-3">Gérer la section images</p>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- image end -->
                 </div>
               
   
