@@ -4,7 +4,7 @@
     
     <!--Section titres-->
     <x-app-layout>
-        <section class="services" data-aos="fade-up">
+        <section class="services">
             <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg"data-aos="fade-up">Section titre</h2>
             @if ($errors->any())
                 <ul class="bg-red-200 text-red-800 text-center py-3 mx-10 mb-6 text-xl font-light rounded-lg shadow-lg">

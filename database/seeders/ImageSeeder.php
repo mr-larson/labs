@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class FooterSeeder extends Seeder
+class ImageSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,10 +14,11 @@ class FooterSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("footers")->insert([
-            "h2" => "2017 All rights reserved. Designed by",
-            "a" => "https://colorlib.com",
-            "span" => "Colorlib",
+        DB::table("images")->insert([
+            "img" => "test-man.png",
+        ]);
+        DB::table("images")->insert([
+            "img" => "device.png",
         ]);
     }
 }

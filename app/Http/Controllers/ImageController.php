@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Video;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class VideoController extends Controller
+class ImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $video = Video::first();
-        return view("backoffice.video.all", compact("video"));
+        $images = Image::all();
+        return view("backoffice.image.all", compact("images"));
     }
 
     /**
@@ -43,10 +43,10 @@ class VideoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function show(Video $video)
+    public function show(Image $image)
     {
         //
     }
@@ -54,53 +54,52 @@ class VideoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function edit(Video $video)
+    public function edit(Image $image)
     {
-        $this->authorize("video-edit", $video);
-        return view("backoffice.video.edit", compact("video"));
+        $this->authorize("image-edit", $image);
+        return view("backoffice.image.edit", compact("image"));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Video $video)
+    public function update(Request $request, Image $image)
     {
-        $this->authorize("update", $video);
+        $this->authorize("update", $image);
         $request->validate([
             "img"=>'required',
-            "a"=>'required',
         ]);
 
-        $video->a = $request->a;
+        $image->a = $request->a;
         if($request->file('img')!= null){
-            Storage::disk('public')->delete("img/" . $video->img);
+            Storage::disk('public')->delete("img/" . $image->img);
 
             $filename = $request->file('img')->getClientOriginalName();
-            $video->img = $filename;
+            $image->img = $filename;
 
             $request->file('img')->storePubliclyAs('img/', $filename , 'public');
         }
         
-        $video->updated_at = now();
-        $video->save();
+        $image->updated_at = now();
+        $image->save();
 
-        return redirect()->route("video.index")->with("successMessage", "Votre video à bien été ajouté");
+        return redirect()->route("image.index")->with("successMessage", "Votre image à bien été ajouté");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Video  $video
+     * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Video $video)
+    public function destroy(Image $image)
     {
         //
     }

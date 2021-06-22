@@ -3,7 +3,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="section-title">
-            <h2>Get in <span>the Lab</span> and  discover the world</h2>
+            <h2>{{ $titres[0]->h2 }} <span>the Lab</span> and  discover the world</h2>
         </div>
         <div class="row">
             <!-- feature item -->
@@ -41,7 +41,7 @@
             <!-- Devices -->
             <div class="col-md-4 col-sm-4 devices">
                 <div class="text-center">
-                    <img src="img/device.png" alt="">
+                    <img src="{{ $images[1]->img }}" alt="">
                 </div>
             </div>
             <!-- feature item -->
@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="text-center mt100">
-            <a href="" class="site-btn">Browse</a>
+            <a href="" class="site-btn">{{ $link->a }}</a>
         </div>
     </div>
 </div>
