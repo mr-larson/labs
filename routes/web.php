@@ -9,6 +9,7 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\TitreController;
 use App\Http\Controllers\VideoController;
 use App\Models\Adresse;
+use App\Models\Feature;
 use App\Models\Footer;
 use App\Models\Image;
 use App\Models\Link;
@@ -41,11 +42,12 @@ Route::get('/', function () {
 
 Route::get('/services', function () {
     $titres = Titre::all();
+    $features = Feature::all();
     $link = Link::first();
     $footer = Footer::first();
     $images = Image::all(); 
     $adresse = Adresse::first(); 
-    return view('services',compact('footer', 'link', 'titres', 'images', 'adresse'));
+    return view('services',compact('footer', 'link', 'titres', 'images', 'adresse', 'features'));
 })->name('services');
 
 Route::get('/blog', function () {
@@ -57,7 +59,8 @@ Route::get('/blog', function () {
 })->name('blog');
 
 Route::get('/read', function () {
-    return view('read');
+    $footer = Footer::first();
+    return view('read',compact('footer'));
 })->name('read');
 
 Route::get('/contact', function () {

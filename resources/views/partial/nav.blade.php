@@ -1,8 +1,7 @@
 <!-- Header section -->
 <header class="header-section">
     <div class="logo">
-        <a href="/dashboard">d</a>
-        <img src="img/logo.png" alt=""><!-- Logo -->
+        <a href="/dashboard"><img src="img/logo.png" alt=""><!-- Logo --></a>
     </div>
     <!-- Navigation -->
     <div class="responsive"><i class="fa fa-bars"></i></div>

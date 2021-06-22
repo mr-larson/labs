@@ -44,5 +44,10 @@ class TitreSeeder extends Seeder
             "p1" => "Cras ex mauris, ornare eget penis pretium sit amet, dignissim et turpis. Nunc nec maximus dui, vel suscipit dolor. Donec elementum velit a orci facilisis rutrum.",
             "p2" => "",
         ]);
+        DB::table("titres")->insert([
+            "h2" => "Get your freebie template now!",
+            "p1" => "",
+            "p2" => "",
+        ]);
     }
 }

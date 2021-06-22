@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ImageSeeder::class);
         $this->call(AdresseSeeder::class);
         $this->call(SliderSeeder::class);
+        $this->call(FeatureSeeder::class);
     }
 }

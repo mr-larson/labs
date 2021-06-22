@@ -3,7 +3,7 @@
 		<div class="hero-content">
 			<div class="hero-center">
 				<img src="{{ asset('img/'.$images[0]->img) }}" alt="">
-				<p>Get your freebie template now!</p>
+				<p>{{ $titres[6]->h2 }}</p>
 			</div>
 		</div>
 		<!-- slider -->

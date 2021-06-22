@@ -50,5 +50,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('slider-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
+        Gate::define('feature-edit', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
     }
 }
