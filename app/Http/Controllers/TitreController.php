@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Footer;
+use App\Models\Titre;
 use Illuminate\Http\Request;
 
-
-class FooterController extends Controller
+class TitreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class FooterController extends Controller
      */
     public function index()
     {
-        $footer = Footer::first();
-        return view("backoffice.footer.all", compact("footer"));
+        $titres = Titre::all();
+        return view("backoffice.titre.all", compact("titres"));
     }
 
     /**
@@ -43,10 +42,10 @@ class FooterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Titre  $titre
      * @return \Illuminate\Http\Response
      */
-    public function show(Footer $footer)
+    public function show(Titre $titre)
     {
         //
     }
@@ -54,48 +53,46 @@ class FooterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Titre  $titre
      * @return \Illuminate\Http\Response
      */
-    public function edit(Footer $footer)
+    public function edit(Titre $titre)
     {
-        $this->authorize("footer-edit", $footer);
-        return view("backoffice.footer.edit", compact("footer"));
+        $this->authorize("titre-edit", $titre);
+        return view("backoffice.titre.edit", compact("titre"));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Titre  $titre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Footer $footer)
+    public function update(Request $request, Titre $titre)
     {
-        $this->authorize("update", $footer);
+        $this->authorize("update", $titre);
         $request->validate([
             "h2"=>'required',
-            "a"=>'required',
-            "span"=>'required'
         ]);
 
-        $footer->h2 = $request->h2;
-        $footer->a = $request->a;
-        $footer->span = $request->span;
+        $titre->h2 = $request->h2;
+        $titre->p1 = $request->p1;
+        $titre->p2 = $request->p2;
 
-        $footer->updated_at = now();
-        $footer->save();
+        $titre->updated_at = now();
+        $titre->save();
 
-        return redirect()->route("footer.index")->with("successMessage", "Votre footer à bien été ajouté");
+        return redirect()->route("titre.index")->with("successMessage", "Votre titre à bien été ajouté");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Titre  $titre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Footer $footer)
+    public function destroy(Titre $titre)
     {
         //
     }

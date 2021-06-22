@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Footer;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
-
-class FooterController extends Controller
+class VideoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class FooterController extends Controller
      */
     public function index()
     {
-        $footer = Footer::first();
-        return view("backoffice.footer.all", compact("footer"));
+        //
     }
 
     /**
@@ -43,10 +41,10 @@ class FooterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function show(Footer $footer)
+    public function show(Video $video)
     {
         //
     }
@@ -54,48 +52,33 @@ class FooterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function edit(Footer $footer)
+    public function edit(Video $video)
     {
-        $this->authorize("footer-edit", $footer);
-        return view("backoffice.footer.edit", compact("footer"));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Footer $footer)
+    public function update(Request $request, Video $video)
     {
-        $this->authorize("update", $footer);
-        $request->validate([
-            "h2"=>'required',
-            "a"=>'required',
-            "span"=>'required'
-        ]);
-
-        $footer->h2 = $request->h2;
-        $footer->a = $request->a;
-        $footer->span = $request->span;
-
-        $footer->updated_at = now();
-        $footer->save();
-
-        return redirect()->route("footer.index")->with("successMessage", "Votre footer à bien été ajouté");
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Footer $footer)
+    public function destroy(Video $video)
     {
         //
     }

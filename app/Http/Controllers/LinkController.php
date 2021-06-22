@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Footer;
+use App\Models\Link;
 use Illuminate\Http\Request;
 
-
-class FooterController extends Controller
+class LinkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,8 @@ class FooterController extends Controller
      */
     public function index()
     {
-        $footer = Footer::first();
-        return view("backoffice.footer.all", compact("footer"));
+        $link = Link::first();
+        return view("backoffice.link.all", compact("link"));
     }
 
     /**
@@ -43,10 +42,10 @@ class FooterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function show(Footer $footer)
+    public function show(Link $link)
     {
         //
     }
@@ -54,48 +53,44 @@ class FooterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function edit(Footer $footer)
+    public function edit(Link $link)
     {
-        $this->authorize("footer-edit", $footer);
-        return view("backoffice.footer.edit", compact("footer"));
+        $this->authorize("link-edit", $link);
+        return view("backoffice.link.edit", compact("link"));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Footer $footer)
+    public function update(Request $request, Link $link)
     {
-        $this->authorize("update", $footer);
+        $this->authorize("update", $link);
         $request->validate([
-            "h2"=>'required',
             "a"=>'required',
-            "span"=>'required'
         ]);
 
-        $footer->h2 = $request->h2;
-        $footer->a = $request->a;
-        $footer->span = $request->span;
+        $link->a = $request->a;
+        
+        $link->updated_at = now();
+        $link->save();
 
-        $footer->updated_at = now();
-        $footer->save();
-
-        return redirect()->route("footer.index")->with("successMessage", "Votre footer à bien été ajouté");
+        return redirect()->route("link.index")->with("successMessage", "Votre link à bien été ajouté");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Footer  $footer
+     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Footer $footer)
+    public function destroy(Link $link)
     {
         //
     }
