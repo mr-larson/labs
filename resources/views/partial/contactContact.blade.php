@@ -9,9 +9,9 @@
 					</div>
 					<p>{{ $titres[5]->p1 }}</p>
 					<h3 class="mt60">Main Office</h3>
-					<p class="con-item">C/ Libertad, 34 <br> 05200 Arévalo </p>
-					<p class="con-item">0034 37483 2445 322</p>
-					<p class="con-item">hello@company.com</p>
+					<p class="con-item">{{ $adresse->rue }}, {{ $adresse->num }} <br> {{ $adresse->code }} {{ $adresse->ville }} </p>
+					<p class="con-item">{{ $adresse->phone }}</p>
+					<p class="con-item">{{ $adresse->email }}</p>
 				</div>
 				<!-- contact form -->
 				<div class="col-md-6 col-pull">

@@ -15,6 +15,9 @@ class ImageSeeder extends Seeder
     public function run()
     {
         DB::table("images")->insert([
+            "img" => "big-logo.png",
+        ]);
+        DB::table("images")->insert([
             "img" => "test-man.png",
         ]);
         DB::table("images")->insert([

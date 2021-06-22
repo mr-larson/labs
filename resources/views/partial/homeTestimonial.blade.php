@@ -1,6 +1,6 @@
 	<!-- Testimonial section -->
 	<div class="testimonial-section pb100">
-		<div class="test-overlay" style="{{ $images[0]->img }}"></div>
+		<div class="test-overlay" style="{{ asset('img/'.$images[1]->img) }}"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-4">

@@ -41,7 +41,7 @@
             <!-- Devices -->
             <div class="col-md-4 col-sm-4 devices">
                 <div class="text-center">
-                    <img src="{{ $images[1]->img }}" alt="">
+                    <img src="{{ asset('img/'.$images[2]->img) }}" alt="">
                 </div>
             </div>
             <!-- feature item -->

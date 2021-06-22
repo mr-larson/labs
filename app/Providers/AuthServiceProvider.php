@@ -41,5 +41,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('image-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
+        Gate::define('adresse-edit', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
     }
 }

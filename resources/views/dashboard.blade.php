@@ -61,15 +61,10 @@
                     </div>
                     <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
                       <a href="{{ route('image.index') }}" class="block ">
-                          <div class="rounded overflow-hidden shadow-lg  flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
+                          <div class="py-16 rounded overflow-hidden shadow-lg  flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                               <p class="text-white text-3xl p-2">Image</p>
-                              <img class="h-96" src="{{asset("img/" . $images->img) }}" alt="">
+                              <img class="h-96 px-4 py-10" src="{{asset("img/" . $images[0]->img)}}" alt="">
                               <p class="text-white opacity-50 font-light py-3">Gérer la section images</p>
-                          </div>
-                          <div class="buttons flex justify-center">
-                            @can('update', $images)
-                                <a href="{{route('image.edit',$images->id) }}" class="bg-indigo-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
-                            @endcan
                           </div>
                       </a>
                     </div>
@@ -103,16 +98,16 @@
                         </a>
                     </div>
                     <!-- link end -->
-                    <!-- link -->
+                    <!-- adresse -->
                     <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
-                        <a href="{{ route('link.index') }}" class="block ">
+                        <a href="{{ route('adresse.index') }}" class="block ">
                             <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
-                                <p class="text-white text-3xl">Link</p>
-                                <p class="text-white opacity-50 font-light py-3">Gérer la section video</p>
+                                <p class="text-white text-3xl">Adresse</p>
+                                <p class="text-white opacity-50 font-light py-3">Gérer vos coordonné</p>
                             </div>
                             <div class="buttons flex justify-center">
-                                @can('update', $link)
-                                    <a href="{{route('link.edit',$link->id) }}" class="bg-indigo-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                @can('update', $adresse)
+                                    <a href="{{route('adresse.edit',$adresse->id) }}" class="bg-indigo-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
                                 @endcan
                             </div>
                         </a>

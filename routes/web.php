@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\AdresseController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\TitreController;
 use App\Http\Controllers\VideoController;
+use App\Models\Adresse;
 use App\Models\Footer;
 use App\Models\Image;
 use App\Models\Link;
@@ -29,7 +31,8 @@ Route::get('/', function () {
     $video = Video::first();
     $footer = Footer::first();
     $images = Image::all(); 
-    return view('home',compact('footer', 'link', 'titres', 'video', 'images'));
+    $adresse = Adresse::first();
+    return view('home',compact('footer', 'link', 'titres', 'video', 'images', 'adresse'));
 })->name('home');
 
 Route::get('/services', function () {
@@ -37,14 +40,16 @@ Route::get('/services', function () {
     $link = Link::first();
     $footer = Footer::first();
     $images = Image::all(); 
-    return view('services',compact('footer', 'link', 'titres', 'images'));
+    $adresse = Adresse::first(); 
+    return view('services',compact('footer', 'link', 'titres', 'images', 'adresse'));
 })->name('services');
 
 Route::get('/blog', function () {
     $titres = Titre::all();
     $link = Link::first();
     $footer = Footer::first(); 
-    return view('blog',compact('footer', 'link', 'titres',));
+    $adresse = Adresse::first(); 
+    return view('blog',compact('footer', 'link', 'titres', 'adresse'));
 })->name('blog');
 
 Route::get('/read', function () {
@@ -54,8 +59,9 @@ Route::get('/read', function () {
 Route::get('/contact', function () {
     $titres = Titre::all();
     $link = Link::first();
-    $footer = Footer::first(); 
-    return view('contact',compact('footer', 'link', 'titres'));
+    $footer = Footer::first();
+    $adresse = Adresse::first();  
+    return view('contact',compact('footer', 'link', 'titres', 'adresse'));
 })->name('contact');
 
 Route::get('/dashboard', function () {
@@ -63,8 +69,9 @@ Route::get('/dashboard', function () {
     $link = Link::first();
     $video = Video::first();
     $footer = Footer::first();
-    $images = Image::first(); 
-    return view('dashboard',compact('footer', 'link', 'titres', 'video', 'images'));
+    $images = Image::all(); 
+    $adresse = Adresse::first(); 
+    return view('dashboard',compact('footer', 'link', 'titres', 'video', 'images', 'adresse'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
@@ -81,3 +88,5 @@ Route::resource("/link", LinkController::class)->middleware(['auth']);
 Route::resource("/footer", FooterController::class)->middleware(['auth']);
 // Image
 Route::resource("/image", ImageController::class)->middleware(['auth']);
+// Adresse
+Route::resource("/adresse", AdresseController::class)->middleware(['auth']);
