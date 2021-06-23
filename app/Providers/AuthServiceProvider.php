@@ -25,32 +25,56 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
+        //Edit
         Gate::define('footer-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
+
         Gate::define('link-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
+
         Gate::define('titre-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
+
         Gate::define('video-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
+
         Gate::define('image-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
+
         Gate::define('adresse-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
+
+        Gate::define('feature-edit', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+
+        Gate::define('service-edit', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+
+        Gate::define('nav-edit', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+
+
+        //Create-Edit
         Gate::define('slider-create', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
         Gate::define('slider-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
-        Gate::define('feature-edit', function () {
+
+        Gate::define('testimonial-create', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+        Gate::define('testimonial-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
     }

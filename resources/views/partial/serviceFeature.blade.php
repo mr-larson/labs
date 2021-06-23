@@ -10,31 +10,31 @@
             <div class="col-md-4 col-sm-4 features">
                 <div class="icon-box light left">
                     <div class="service-text">
-                        <h2>Get in the lab</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec</p>
+                        <h2>{{ $features[0]->h2 }}</h2>
+                        <p>{{ $features[0]->p }}</p>
                     </div>
                     <div class="icon">
-                        <i class="flaticon-002-caliper"></i>
+                        <i class="{{ $features[0]->i }}"></i>
                     </div>
                 </div>
                 <!-- feature item -->
                 <div class="icon-box light left">
                     <div class="service-text">
-                        <h2>Projects online</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec</p>
+                        <h2>{{ $features[1]->h2 }}</h2>
+                        <p>{{ $features[1]->p }}</p>
                     </div>
                     <div class="icon">
-                        <i class="flaticon-019-coffee-cup"></i>
+                        <i class="{{ $features[1]->i }}"></i>
                     </div>
                 </div>
                 <!-- feature item -->
                 <div class="icon-box light left">
                     <div class="service-text">
-                        <h2>SMART MARKETING</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec</p>
+                        <h2>{{ $features[2]->h2 }}</h2>
+                        <p>{{ $features[2]->p }}</p>
                     </div>
                     <div class="icon">
-                        <i class="flaticon-020-creativity"></i>
+                        <i class="{{ $features[2]->i }}"></i>
                     </div>
                 </div>
             </div>
@@ -48,31 +48,31 @@
             <div class="col-md-4 col-sm-4 features">
                 <div class="icon-box light">
                     <div class="icon">
-                        <i class="flaticon-037-idea"></i>
+                        <i class="{{ $features[3]->i }}"></i>
                     </div>
                     <div class="service-text">
-                        <h2>Get in the lab</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec</p>
+                        <h2>{{ $features[3]->h2 }}</h2>
+                        <p>{{ $features[3]->p }}</p>
                     </div>
                 </div>
                 <!-- feature item -->
                 <div class="icon-box light">
                     <div class="icon">
-                        <i class="flaticon-025-imagination"></i>
+                        <i class="{{ $features[4]->i }}"></i>
                     </div>
                     <div class="service-text">
-                        <h2>Projects online</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec</p>
+                        <h2>{{ $features[4]->h2 }}</h2>
+                        <p>{{ $features[4]->p }}</p>
                     </div>
                 </div>
                 <!-- feature item -->
                 <div class="icon-box light">
                     <div class="icon">
-                        <i class="flaticon-008-team"></i>
+                        <i class="{{ $features[5]->i }}"></i>
                     </div>
                     <div class="service-text">
-                        <h2>SMART MARKETING</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur ad ipiscing elit. Curabitur leo est, feugiat nec</p>
+                        <h2>{{ $features[5]->h2 }}</h2>
+                        <p>{{ $features[5]->p }}</p>
                     </div>
                 </div>
             </div>

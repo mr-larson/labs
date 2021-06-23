@@ -9,7 +9,7 @@
             </li>
             <li>
               <x-nav-link>
-                <div class="relative flex flex-row items-center h-11 text-center mb-10">
+                <div class="relative flex flex-row items-center h-11 text-center mb-10 ml-2">
                   <a href="/dashboard"><img src="img/logo.png" alt=""><!-- Logo --></a>
                 </div>
               </x-nav-link>
@@ -18,9 +18,16 @@
                 <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="relative flex flex-row items-center h-11 text-center"><span class="text-white inline-flex justify-center items-center ml-4">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                   </span>
-                  <span class="ml-2 text-2xl tracking-wide truncate text-white"> {{ __('Dashboard') }}</span>
+                  <span class="ml-2 text-4xl tracking-wide truncate text-white"> {{ __('Dashboard') }}</span>
                 </x-nav-link>
             </li>
+            <li>
+              <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="relative flex flex-row items-center h-11 text-center mb-3"><span class="text-white inline-flex justify-center items-center ml-4">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                </span>
+                <span class="ml-2 text-4xl tracking-wide truncate text-white"> {{ __('home') }}</span>
+              </x-nav-link>
+          </li>
             <li>
                 <x-nav-link :href="route('footer.index')" :active="request()->routeIs('footer.index', 'footer.edit')" class="relative flex flex-row items-center h-11 text-center"><span class="text-white inline-flex justify-center items-center ml-4">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
@@ -71,10 +78,24 @@
               </x-nav-link>
             </li>
             <li>
+              <x-nav-link :href="route('service.index')" :active="request()->routeIs('service.index','service.edit')" class="relative flex flex-row items-center h-11 text-center"><span class="text-white inline-flex justify-center items-center ml-4">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
+                </span>
+                <span class="ml-2 text-2xl tracking-wide truncate text-white"> {{ __('service') }}</span>
+              </x-nav-link>
+            </li>
+            <li>
               <x-nav-link :href="route('slider.index')" :active="request()->routeIs('slider.index', 'slider.edit', 'slider.create')" class="relative flex flex-row items-center h-11 text-center"><span class="text-white inline-flex justify-center items-center ml-4">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
                 </span>
                 <span class="ml-2 text-2xl tracking-wide truncate text-white"> {{ __('slider') }}</span>
+              </x-nav-link>
+            </li>
+            <li>
+              <x-nav-link :href="route('testimonial.index')" :active="request()->routeIs('testimonial.index', 'testimonial.edit', 'testimonial.create')" class="relative flex flex-row items-center h-11 text-center"><span class="text-white inline-flex justify-center items-center ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+                </span>
+                <span class="ml-2 text-2xl tracking-wide truncate text-white"> {{ __('testimonial') }}</span>
               </x-nav-link>
             </li>
             <li>
