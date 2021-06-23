@@ -413,6 +413,14 @@ ul {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.overlay2 {
+	width: 100%;
+	left: 30px;
+	z-index: -1;
+	background-image: url("../img/overlay.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
 /*Card Section*/
 .card-section {

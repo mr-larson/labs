@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdresseController;
+use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LinkController;
@@ -79,7 +80,8 @@ Route::get('/dashboard', function () {
     $images = Image::all(); 
     $adresse = Adresse::first();
     $sliders = Slider::all();  
-    return view('dashboard',compact('footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders'));
+    $features = Feature::all();
+    return view('dashboard',compact('footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'features'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
@@ -100,5 +102,7 @@ Route::resource("/image", ImageController::class)->middleware(['auth']);
 Route::resource("/adresse", AdresseController::class)->middleware(['auth']);
 // Slider
 Route::resource("/slider", SliderController::class)->middleware(['auth']);
+// Feature
+Route::resource("/feature", FeatureController::class)->middleware(['auth']);
 //Route pour l'email (Contact.blade.php)
 Route::post("/send-mail", [MailController::class, "sendMail"]);

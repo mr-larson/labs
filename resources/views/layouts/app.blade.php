@@ -28,7 +28,7 @@
             </header> --}}
 
             <!-- Page Content -->
-            <main>
+            <main class="overlay2 bg-purple-600">
                 {{ $slot }}
             </main>
         </div>
