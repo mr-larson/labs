@@ -9,9 +9,9 @@
                         <div class="">
                             <h3 class="text-white">Footer</h3>
                         </div>
-                        <p>{{ $footer->h2 }}</p>
-                        <p>{{ $footer->a }}</p>
-                        <p>{{ $footer->span }}</p>
+                        <p class="text-green-300 text-opacity-80">{{ $footer->h2 }}</p>
+                        <p class="text-green-300 text-opacity-80">{{ $footer->a }}</p>
+                        <p class="text-green-300 text-opacity-80">{{ $footer->span }}</p>
                         <div class="buttons flex justify-center">
                             @can('update', $footer)
                                 <a href="{{route('footer.edit',$footer->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>

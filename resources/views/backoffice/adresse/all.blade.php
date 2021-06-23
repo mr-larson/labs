@@ -9,12 +9,12 @@
                         <div class="">
                             <h3 class="text-white">adresse</h3>
                         </div>
-                        <p>{{ $adresse->rue }}</p>
-                        <p>{{ $adresse->num }}</p>
-                        <p>{{ $adresse->ville }}</p>
-                        <p>{{ $adresse->code }}</p>
-                        <p>{{ $adresse->phone }}</p>
-                        <p>{{ $adresse->email }}</p>
+                        <p class="text-green-300 text-opacity-80">{{ $adresse->rue }}</p>
+                        <p class="text-green-300 text-opacity-80">{{ $adresse->num }}</p>
+                        <p class="text-green-300 text-opacity-80">{{ $adresse->ville }}</p>
+                        <p class="text-green-300 text-opacity-80">{{ $adresse->code }}</p>
+                        <p class="text-green-300 text-opacity-80">{{ $adresse->phone }}</p>
+                        <p class="text-green-300 text-opacity-80">{{ $adresse->email }}</p>
                         <div class="buttons flex justify-center">
                             @can('update', $adresse)
                                 <a href="{{route('adresse.edit',$adresse->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>

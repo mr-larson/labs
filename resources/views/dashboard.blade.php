@@ -41,31 +41,9 @@
             </div>
         </div>
           <!-- ./Statistics Cards -->
-
-                <!-- Contact Form -->
-                <div class="mt-8 mx-4">
-                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 p-6 gap-2">
-                    <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
-                        <a href="{{ route('video.index') }}" class="block ">
-                            <div class="rounded overflow-hidden shadow-lg  flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
-                                <p class="text-white text-3xl p-2">Video</p>
-                                <img src="{{asset("img/" . $video->img) }}" alt="">
-                                <p class="text-white opacity-50 font-light py-3">Gérer la section Videos</p>
-                            </div>
-                            <div class="buttons flex justify-center">
-                              @can('update', $video)
-                                  <a href="{{route('video.edit',$video->id) }}" class="bg-indigo-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
-                              @endcan
-                            </div>
-                        </a>
-                    </div>
-                  </div>
-                </div>
-                <!-- ./Contact Form -->
-
+          <div class="mt-8 mx-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-6 gap-3">
                 <!-- Titre -->
-                <div class="mt-8 mx-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-6 gap-3">
-                    <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                    <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
                         <a href="{{ route('titre.index') }}" class="block ">
                           <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                             <p class="text-white text-3xl">Title</p>
@@ -75,7 +53,7 @@
                     </div>
                     <!-- Titre end -->
                     <!-- link -->
-                    <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                    <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
                         <a href="{{ route('link.index') }}" class="block ">
                             <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                                 <p class="text-white text-3xl">Link</p>
@@ -83,14 +61,34 @@
                             </div>
                             <div class="buttons flex justify-center">
                               @can('update', $link)
-                                  <a href="{{route('link.edit',$link->id) }}" class="bg-indigo-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                  <a href="{{route('link.edit',$link->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
                               @endcan
                           </div>
                         </a>
                     </div>
                     <!-- link end -->
+                    <!-- features -->
+                    <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                      <a href="{{ route('feature.index') }}" class="block ">
+                        <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
+                          <p class="text-white text-3xl">features</p>
+                          <p class="text-white opacity-50 font-light py-3">Gérer vos features premium</p>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- features end -->
+                    <!-- Titre -->
+                    <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                      <a href="{{ route('titre.index') }}" class="block ">
+                        <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
+                          <p class="text-white text-3xl">Title</p>
+                          <p class="text-white opacity-50 font-light py-3">Gérer la section Title</p>
+                        </div>
+                      </a>
+                    </div>
+                    <!-- Titre end -->
                     <!-- adresse -->
-                    <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                    <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
                         <a href="{{ route('adresse.index') }}" class="block ">
                             <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                                 <p class="text-white text-3xl">Adresse</p>
@@ -98,30 +96,48 @@
                             </div>
                             <div class="buttons flex justify-center">
                                 @can('update', $adresse)
-                                    <a href="{{route('adresse.edit',$adresse->id) }}" class="bg-indigo-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                    <a href="{{route('adresse.edit',$adresse->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
                                 @endcan
                             </div>
                         </a>
                     </div>
                     <!-- adresse end -->
+                    <!-- features -->
+                <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                  <a href="{{ route('feature.index') }}" class="block ">
+                      <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
+                          <p class="text-white text-3xl">features</p>
+                          <p class="text-white opacity-50 font-light py-3">Gérer vos features premium</p>
+                      </div>
+                      <div class="buttons flex justify-center">
+                          @can('update', $features)
+                              <a href="{{route('feature.edit',$feature->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
+                          @endcan
+                      </div>
+                  </a>
+                </div>
+                <!-- features end -->
                     <!-- slider -->
-                    <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                    <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
                       <a href="{{ route('slider.index') }}" class="block ">
                           <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
-                              <p class="text-white text-3xl">Slider</p>
-                              <img class="h-96 px-4 py-10" src="{{asset("img/" . $sliders[0]->img)}}" alt="">
+                              <p class="text-white text-3xl p-2">Slider</p>
+                              <img class="h-60 px-4 py-10" src="{{asset("img/" . $sliders[0]->img)}}" alt="">
                               <p class="text-white opacity-50 font-light py-3">Gérer votre section slider</p>
                           </div>
                           <div class="buttons flex justify-center">
-                              @can('update', $sliders)
-                                  <a href="{{route('slider.edit',$sliders->id) }}" class="bg-indigo-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
-                              @endcan
+                            @can('create', App\models\Slider::class)
+                              <div class=" flex justify-center my-2">
+                                  <a class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white" href="/slider/create">+ Create</a>
+                              </div>
+                            @endcan
                           </div>
                       </a>
                     </div>
                     <!-- slider end -->
+                    
                     <!-- image -->
-                    <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                    <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
                       <a href="{{ route('image.index') }}" class="block ">
                         <div class="py-16 rounded overflow-hidden shadow-lg  flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                             <p class="text-white text-3xl p-2">Image</p>
@@ -131,6 +147,22 @@
                       </a>
                     </div>
                     <!-- image end -->
+                    <!-- video -->
+                    <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                      <a href="{{ route('video.index') }}" class="block ">
+                          <div class="rounded overflow-hidden shadow-lg  flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
+                              <p class="text-white text-3xl p-2">Video</p>
+                              <img class="h-90 px-4 py-10" src="{{asset("img/" . $video->img) }}" alt="">
+                              <p class="text-white opacity-50 font-light py-3">Gérer la section Videos</p>
+                          </div>
+                          <div class="buttons flex justify-center">
+                            @can('update', $video)
+                                <a href="{{route('video.edit',$video->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
+                            @endcan
+                          </div>
+                      </a>
+                  </div>
+                    <!-- video end -->
                 </div>
               
   
@@ -144,7 +176,7 @@
                           </div>
                           <div class="buttons flex justify-center">
                               @can('update', $footer)
-                                  <a href="{{route('footer.edit',$footer->id) }}" class="bg-indigo-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                  <a href="{{route('footer.edit',$footer->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
                               @endcan
                           </div>
                         </div>
