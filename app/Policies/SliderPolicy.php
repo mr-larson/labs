@@ -18,7 +18,6 @@ class SliderPolicy
      */
     public function viewAny(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
     }
 
     /**
@@ -30,7 +29,6 @@ class SliderPolicy
      */
     public function view(User $user, Slider $slider)
     {
-        return in_array($user->role_id, [1, 2]);
     }
 
     /**

@@ -3,10 +3,10 @@
     <x-app-layout class="">
       <!-- nav -->
       <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
-        <a href="{{ route('titre.index') }}" class="block ">
+        <a href="{{ route('nav.index') }}" class="block ">
           <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
             <p class="text-white text-3xl">Navbar</p>
-            <p class="text-white opacity-50 font-light py-3">Gérer la noms dans la navbar</p>
+            <p class="text-white opacity-50 font-light py-3">Gérer les noms dans la navbar</p>
           </div>
         </a>
     </div>

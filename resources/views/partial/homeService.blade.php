@@ -2,11 +2,11 @@
 <div class="services-section spad">
     <div class="container">
         <div class="section-title dark">
-            <h2>{{ $titres[2]->h2 }} <span>the Lab</span> and see the services</h2>
+            <h2>{!! str_replace(["(", ")"], ["<span>", "</span>"], $titres[2]->h2) !!}</h2>
         </div>
         <div class="row">
             <!-- single service -->
-            @foreach ($services as $service)
+            @foreach ($services->shuffle()->slice(0,9) as $service)
                 <div class="col-md-4 col-sm-6">
                     <div class="service">
                         <div class="icon">

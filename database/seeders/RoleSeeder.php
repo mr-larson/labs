@@ -25,13 +25,14 @@ class RoleSeeder extends Seeder
         DB::table("roles")->insert([
             "poste" => "Redacteur",
         ]);
-
+        
         DB::table("roles")->insert([
             "poste" => "Member",
         ]);
-
+        
         DB::table("roles")->insert([
-            "poste" => "Guest",
+            "poste" => "data-analyser",
         ]);
+
     }
 }

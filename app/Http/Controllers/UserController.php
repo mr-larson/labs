@@ -87,7 +87,7 @@ class UserController extends Controller
         
         $user->save();
 
-        return redirect()->route('user.index', compact('user'))->with("message", "$user->h3 a bien été crée.");
+        return redirect()->route('user.index', compact('user'))->with("message", "$user->nom a bien été modifié.");
     }
 
     /**

@@ -3,9 +3,10 @@
 @section('content')
     <x-app-layout>
         <section class="py-12">
+            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg">Section nav</h2>
             <div class="container">
                 @foreach ($navs as $nav)
-                <div class="col-sm-4">
+                <div class="col col-sm-4 my-4">
                     <div class="rounded overflow-hidden shadow-lg p-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                         <div class="">
                             <h3 class="text-white">nav</h3>

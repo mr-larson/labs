@@ -18,7 +18,6 @@ class TestimonialPolicy
      */
     public function viewAny(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
     }
 
     /**
@@ -30,7 +29,6 @@ class TestimonialPolicy
      */
     public function view(User $user, Testimonial $testimonial)
     {
-        return in_array($user->role_id, [1, 2]);
     }
 
     /**

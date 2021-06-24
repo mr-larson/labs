@@ -5,47 +5,30 @@
     <div class="card-section">
         <div class="container">
             <div class="row">
-                <!-- single card -->
+                <!-- single service -->
+                @foreach ($services->shuffle()->slice(0,3) as $service)
                 <div class="col-md-4 col-sm-6">
                     <div class="lab-card">
                         <div class="icon">
-                            <i class="flaticon-023-flask"></i>
+                            <i class="{{ $service->i }}"></i>
                         </div>
-                        <h2>Get in the lab</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
+                        <div class="service-text">
+                            <h2>{{ $service->h2 }}</h2>
+                            <p>{{ $service->p }}</p>
+                        </div>
                     </div>
                 </div>
-                <!-- single card -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="lab-card">
-                        <div class="icon">
-                            <i class="flaticon-011-compass"></i>
-                        </div>
-                        <h2>Projects online</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                    </div>
-                </div>
-                <!-- single card -->
-                <div class="col-md-4 col-sm-12">
-                    <div class="lab-card">
-                        <div class="icon">
-                            <i class="flaticon-037-idea"></i>
-                        </div>
-                        <h2>SMART MARKETING</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla..</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
     <!-- card section end-->
 
-
     <!-- About contant -->
     <div class="about-contant">
         <div class="container">
             <div class="section-title">
-                <h2>{{ $titres[0]->h2 }} <span>the Lab</span> and discover the world</h2>
+                <h2>{!! str_replace(["(", ")"], ["<span>", "</span>"], $titres[0]->h2) !!}</h2>
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -66,6 +49,11 @@
                         <a href="{{ $video->a }}" class="video-popup">
                             <i class="fa fa-play"></i>
                         </a>
+                        <div class="buttons flex justify-center">
+                            @can('update', $video)
+                                <a href="{{route('video.edit',$video->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                            @endcan
+                        </div>
                     </div>
                 </div>
             </div>

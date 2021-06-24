@@ -18,7 +18,7 @@ class ImagePolicy
      */
     public function viewAny(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**
@@ -30,7 +30,7 @@ class ImagePolicy
      */
     public function view(User $user, Image $image)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**

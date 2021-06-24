@@ -3,14 +3,15 @@
 @section('content')
     <x-app-layout>
         <section class="py-12">
+            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg">Section testimonial</h2>
             <div class="container">
                 @can('create', App\models\Testimonial::class)
                     <div class="max-w-6xl mx-auto  flex justify-center my-2">
-                        <a class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 text-white" href="/testimonial/create">+ Create</a>
+                        <a class="site-btn hover:bg-purple-500 text-white px-2 rounded-lg m-2 w-auto text-center" href="/testimonial/create">+ Create</a>
                     </div>
                 @endcan
                 @foreach ($testimonials as $testimonial)
-                <div class="col-sm-4">
+                <div class="col col-sm-3 my-4">
                     <div class="rounded overflow-hidden shadow-lg p-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
                         <div class="">
                             <h3 class="text-white">testimonial</h3>

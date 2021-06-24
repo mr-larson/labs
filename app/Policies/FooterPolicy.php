@@ -18,7 +18,7 @@ class FooterPolicy
      */
     public function viewAny(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**
@@ -30,7 +30,7 @@ class FooterPolicy
      */
     public function view(User $user, Footer $footer)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**

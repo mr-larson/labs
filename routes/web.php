@@ -11,6 +11,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TitreController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Models\Adresse;
 use App\Models\Feature;
@@ -22,6 +23,7 @@ use App\Models\Service;
 use App\Models\Slider;
 use App\Models\Testimonial;
 use App\Models\Titre;
+use App\Models\User;
 use App\Models\Video;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +39,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $users = User::all();
     $titres = Titre::all();
     $link = Link::first();
     $services = Service::all();
@@ -47,10 +50,11 @@ Route::get('/', function () {
     $sliders = Slider::all(); 
     $testimonials = Testimonial::all(); 
     $adresse = Adresse::first();
-    return view('home',compact('nav','footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'services', 'testimonials'));
+    return view('home',compact('users','nav','footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'services', 'testimonials'));
 })->name('home');
 
 Route::get('/services', function () {
+    $users = User::all();
     $titres = Titre::all();
     $features = Feature::all();
     $services = Service::all();
@@ -59,34 +63,41 @@ Route::get('/services', function () {
     $footer = Footer::first();
     $images = Image::all(); 
     $adresse = Adresse::first(); 
-    return view('services',compact('nav','footer', 'link', 'titres', 'images', 'adresse', 'features', 'services'));
+    return view('services',compact('users','nav','footer', 'link', 'titres', 'images', 'adresse', 'features', 'services'));
 })->name('services');
 
 Route::get('/blog', function () {
+    $users = User::all();
+    $images = Image::all(); 
     $titres = Titre::all();
     $link = Link::first();
     $nav = Nav::all();
     $footer = Footer::first(); 
     $adresse = Adresse::first(); 
-    return view('blog',compact('nav','footer', 'link', 'titres', 'adresse'));
+    return view('blog',compact('users','nav','footer', 'link', 'titres', 'adresse', 'images'));
 })->name('blog');
 
 Route::get('/read', function () {
+    $images = Image::all(); 
+    $users = User::all();
     $nav = Nav::all();
     $footer = Footer::first();
-    return view('read',compact('nav','footer'));
+    return view('read',compact('users','nav','footer', 'images'));
 })->name('read');
 
 Route::get('/contact', function () {
+    $images = Image::all(); 
+    $users = User::all();
     $titres = Titre::all();
     $link = Link::first();
     $nav = Nav::all();
     $footer = Footer::first();
     $adresse = Adresse::first();  
-    return view('contact',compact('nav','footer', 'link', 'titres', 'adresse'));
+    return view('contact',compact('users','nav','footer', 'link', 'titres', 'adresse', 'images'));
 })->name('contact');
 
 Route::get('/dashboard', function () {
+    $users = User::all();
     $titres = Titre::all();
     $link = Link::first();
     $video = Video::first();
@@ -98,12 +109,14 @@ Route::get('/dashboard', function () {
     $features = Feature::all();
     $services = Service::all();
     $testimonials = Testimonial::all(); 
-    return view('dashboard',compact('nav', 'footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'features', 'services', 'testimonials'));
+    return view('dashboard',compact('users','nav', 'footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'features', 'services', 'testimonials'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
 //All
+// User
+Route::resource("/user", UserController::class)->middleware(['auth']);
 // Nav
 Route::resource("/nav", NavController::class)->middleware(['auth']);
 // Titre

@@ -18,7 +18,7 @@ class LinkPolicy
      */
     public function viewAny(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**
@@ -30,7 +30,7 @@ class LinkPolicy
      */
     public function view(User $user, Link $link)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**

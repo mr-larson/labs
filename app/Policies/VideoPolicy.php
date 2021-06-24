@@ -18,7 +18,6 @@ class VideoPolicy
      */
     public function viewAny(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
     }
 
     /**
@@ -30,7 +29,6 @@ class VideoPolicy
      */
     public function view(User $user, Video $video)
     {
-        return in_array($user->role_id, [1, 2]);
     }
 
     /**

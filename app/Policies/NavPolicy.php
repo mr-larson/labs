@@ -18,7 +18,7 @@ class NavPolicy
      */
     public function viewAny(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**
@@ -30,7 +30,7 @@ class NavPolicy
      */
     public function view(User $user, Nav $nav)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**
@@ -41,7 +41,7 @@ class NavPolicy
      */
     public function create(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**

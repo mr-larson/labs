@@ -18,10 +18,13 @@ class ImageSeeder extends Seeder
             "img" => "big-logo.png",
         ]);
         DB::table("images")->insert([
-            "img" => "test-man.png",
+            "img" => "test-man_2.png",
         ]);
         DB::table("images")->insert([
             "img" => "device.png",
+        ]);
+        DB::table("images")->insert([
+            "img" => "logo.png",
         ]);
     }
 }

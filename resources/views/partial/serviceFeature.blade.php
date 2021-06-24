@@ -3,7 +3,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="section-title">
-            <h2>{{ $titres[0]->h2 }} <span>the Lab</span> and  discover the world</h2>
+            <h2>{!! str_replace(["(", ")"], ["<span>", "</span>"], $titres[0]->h2) !!}</h2>
         </div>
         <div class="row">
             <!-- feature item -->

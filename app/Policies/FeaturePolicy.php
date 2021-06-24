@@ -18,7 +18,7 @@ class FeaturePolicy
      */
     public function viewAny(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**
@@ -30,7 +30,7 @@ class FeaturePolicy
      */
     public function view(User $user, Feature $feature)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**

@@ -18,7 +18,7 @@ class ServicePolicy
      */
     public function viewAny(User $user)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**
@@ -30,7 +30,7 @@ class ServicePolicy
      */
     public function view(User $user, Service $service)
     {
-        return in_array($user->role_id, [1, 2]);
+        
     }
 
     /**

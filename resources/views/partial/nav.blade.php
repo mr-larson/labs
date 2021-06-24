@@ -1,7 +1,7 @@
 <!-- Header section -->
 <header class="header-section">
     <div class="logo">
-        <a href="/dashboard"><img src="img/logo.png" alt=""><!-- Logo --></a>
+        <a href="/dashboard"><img src="{{ asset('img/'.$images[3]->img) }}" alt=""><!-- Logo --></a>
     </div>
     <!-- Navigation -->
     <div class="responsive"><i class="fa fa-bars"></i></div>
