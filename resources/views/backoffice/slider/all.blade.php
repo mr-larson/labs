@@ -22,9 +22,17 @@
                                 @can('update', $slider)
                                     <a href="{{route('slider.edit',$slider->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
                                 @endcan
+                                @can('delete', $slider)
+                                    <form action="{{ route('slider.destroy',$slider->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="bg-red-500 hover:bg-red-600 text-white px-1 rounded-lg m-2 w-auto text-center">Delete</button>
+                                    </form>
+                                @endcan
                             </div>
                         </div>
                     </div>
+                </div>
                 @endforeach
             </div>
         </section>

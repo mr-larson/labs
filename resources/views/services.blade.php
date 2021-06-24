@@ -3,7 +3,6 @@
 @section('content')
     @include('partial.preloder')
     @include('partial.nav')
-    @include('partial.pageHeader')
     @include('partial.serviceService')
     @include('partial.serviceFeature')
     @include('partial.serviceCard')

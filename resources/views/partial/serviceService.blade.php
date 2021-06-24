@@ -1,3 +1,17 @@
+<!-- Page header -->
+<div class="page-top-section">
+    <div class="overlay"></div>
+    <div class="container text-right">
+        <div class="page-info">
+            <h2>{{ $nav[1]->li }}</h2>
+            <div class="page-links">
+                <a href="#">Home</a>
+                <span>{{ $nav[1]->li }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page header end -->
 <!-- services section -->
 <div class="services-section spad">
     <div class="container">

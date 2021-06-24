@@ -1,6 +1,16 @@
 @extends('layouts.appFront')
 @section('content')
-    <x-app-layout>
+    <x-app-layout class="">
+      <!-- nav -->
+      <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+        <a href="{{ route('titre.index') }}" class="block ">
+          <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center bg-indigo-600 hover:bg-indigo-800">
+            <p class="text-white text-3xl">Navbar</p>
+            <p class="text-white opacity-50 font-light py-3">Gérer la noms dans la navbar</p>
+          </div>
+        </a>
+    </div>
+    <!-- nav end -->
           <div class="mt-8 mx-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-6 gap-3">
                 <!-- Titre -->
                     <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
@@ -147,9 +157,9 @@
                               @endcan
                           </div>
                         </div>
-                    </a>
+                      </a>
+                    </div>
                   </div>
-                </div>
                 <!-- .footer end -->
               </div>
             </div>

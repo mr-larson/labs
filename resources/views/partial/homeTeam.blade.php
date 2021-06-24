@@ -9,9 +9,9 @@
             <!-- single member -->
             <div class="col-sm-4">
                 <div class="member">
-                    <img src="img/team/1.jpg" alt="">
-                    <h2>Christinne Williams</h2>
-                    <h3>Project Manager</h3>
+                    <img src="{{asset("img/team/" . $users[0]->img) }}" alt="">
+                    <h2>{{ $users[0]->name }}</h2>
+                    <h3>{{ $users[0]->role->poste }}</h3>
                 </div>
             </div>
             <!-- single member -->

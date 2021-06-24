@@ -77,7 +77,7 @@ class ImageController extends Controller
             "img"=>'required',
         ]);
 
-        $image->a = $request->a;
+        $image->img = $request->img;
         if($request->file('img')!= null){
             Storage::disk('public')->delete("img/" . $image->img);
 

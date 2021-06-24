@@ -15,6 +15,7 @@ class User extends Authenticatable
         "nom",
         "email",
         "password",
+        "img",
     ];
 
     public function role(){

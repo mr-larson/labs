@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             "nom" => "Walter White",
             "email" => "walter@mail.com",
             "password" => Hash::make("aaaaaaaa"),
+            "img" => "team/1.jpg",
             'role_id'=>'1'
         ]);
 
@@ -26,6 +27,7 @@ class UserSeeder extends Seeder
             "nom" => "Sarah Jhonson",
             "email" => "sarah@mail.com",
             "password" => Hash::make("aaaaaaaa"),
+            "img" => "team/2.jpg",
             'role_id'=>'2'
         ]);
 
@@ -33,6 +35,7 @@ class UserSeeder extends Seeder
             "nom" => "William Anderson",
             "email" => "william@mail.com",
             "password" => Hash::make("aaaaaaaa"),
+            "img" => "team/3.jpg",
             'role_id'=>'3'
         ]);
 
@@ -40,6 +43,7 @@ class UserSeeder extends Seeder
             "nom" => "Amanda Jepson",
             "email" => "amanda@mail.com",
             "password" => Hash::make("aaaaaaaa"),
+            "img" => "",
             'role_id'=>'4'
         ]);
     }

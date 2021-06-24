@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        $roles = Role::all();
+        return view("backoffice.user.all", compact("roles", "users"));
     }
 
     /**
@@ -24,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -57,7 +60,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        $this->authorize("user-edit", $user);
+        return view('backoffice.user.edit', compact('user'));
     }
 
     /**
@@ -69,7 +73,21 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $this->authorize('update', $user);
+        $user->nom = $request->nom;
+        $user->role_id = $request->role_id;
+       
+
+        if ($request->file("img/users") !== null) {
+            $user->img = $request->file("img/users")->hashName();
+            $request->file("img/users")->storePublicly("img/users", "public");
+        }
+
+        $user->created_at = now();
+        
+        $user->save();
+
+        return redirect()->route('user.index', compact('user'))->with("message", "$user->h3 a bien été crée.");
     }
 
     /**
