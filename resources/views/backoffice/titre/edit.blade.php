@@ -5,7 +5,7 @@
     <!--Section titres-->
     <x-app-layout>
         <section class="services">
-            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg">Section titre</h2>
+            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300">Section titre</h2>
             @if ($errors->any())
                 <ul class="bg-red-200 text-red-800 text-center py-3 mx-10 mb-6 text-xl font-light rounded-lg shadow-lg">
 
@@ -16,7 +16,7 @@
                 </ul>
             @endif
             <!--Edit Card-->
-            <form method="POST" class="grid grid-cols-1 bg-indigo-600 rounded shadow-lg mx-auto p-3 w-3/5 mb-4" action="{{ route('titre.update', $titre->id) }}" enctype="multipart/form-data">
+            <form method="POST" class="grid grid-cols-1 overlay2 bg-purple-600 hover:bg-purple-800 rounded shadow-lg mx-auto p-3 w-3/5 mb-4" action="{{ route('titre.update', $titre->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                     <div class="my-4 col-span-2">

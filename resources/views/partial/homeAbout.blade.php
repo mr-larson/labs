@@ -49,11 +49,6 @@
                         <a href="{{ $video->a }}" class="video-popup">
                             <i class="fa fa-play"></i>
                         </a>
-                        <div class="buttons flex justify-center">
-                            @can('update', $video)
-                                <a href="{{route('video.edit',$video->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
-                            @endcan
-                        </div>
                     </div>
                 </div>
             </div>

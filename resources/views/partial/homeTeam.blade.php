@@ -15,13 +15,7 @@
                     <h2>{{ $users[$i]->nom }}</h2>
                     <h3>{{ $users[$i]->role->poste }}</h3>
                 </div>
-                <div class="buttons flex justify-center">
-                    @can('update', $users)
-                        <a href="{{route('user.edit',$users[$i]->id) }}" class="bg-white hover:bg-white-700 text-indigo-600 px-2 rounded-lg m-2 w-auto text-center">Edit</a>
-                    @endcan
-                </div>
             </div>
-
             <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">

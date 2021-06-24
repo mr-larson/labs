@@ -49,5 +49,10 @@ class TitreSeeder extends Seeder
             "p1" => "",
             "p2" => "",
         ]);
+        DB::table("titres")->insert([
+            "h2" => "Newsletter",
+            "p1" => "NEWSLETTER",
+            "p2" => "",
+        ]);
     }
 }

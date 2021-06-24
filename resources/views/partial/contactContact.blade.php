@@ -13,11 +13,6 @@
 					<p class="con-item">{{ $adresse->rue }}, {{ $adresse->num }} <br> {{ $adresse->code }} {{ $adresse->ville }} </p>
 					<p class="con-item">{{ $adresse->phone }}</p>
 					<p class="con-item">{{ $adresse->email }}</p>
-					<div class="buttons flex justify-center">
-						@can('update', $adresse)
-							<a href="{{route('adresse.edit',$adresse->id) }}" class="site-btn hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
-						@endcan
-					</div>
 				</div>
 				<!-- contact form -->
 				<div class="col-md-6 col-pull"> 
