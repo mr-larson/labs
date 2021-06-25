@@ -5,7 +5,7 @@
     <!--Section users-->
     <x-app-layout>
         <section class="services">
-            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300">Section user</h2>
+            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section user</h2>
             @if ($errors->any())
                 <ul class="bg-red-200 text-red-800 text-center py-3 mx-10 mb-6 text-xl font-light rounded-lg shadow-lg">
 
@@ -29,9 +29,20 @@
                     </div>
                     <div class="my-4  col-span-2">
                         <label class="text-white text-base">Poste</label>
-                        <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $user->role->poste }}" name="poste">
+                        <input type="select" class="px-3 py-1 w-full rounded-md" value="{{ $user->role->poste }}" name="poste">
                     </div>
-                    <button type="submit" class="bg-gradient-to-r from-green-400 to-purple-500 text-white font-bold py-2 px-4  mx-auto my-8 rounded">Submit</button>
+                    <div class="mb-3">
+                        <label class="form-label">Poste</label>
+                        <select class="custom-select"  name="poste" value="{{ $user->role->poste }}">
+                            <option selected>choisissez un poste</option>
+                            <option value="admin">Admin</option> 
+                            <option value="webmabster">master</option>
+                            <option value="redact">Redacteur</option>
+                            <option value="membre">Membre</option>
+                            <option value="data-analyser">Visiteur</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="bg-gradient-to-r from-green-400 to-purple-500 text-white font-bold py-2 px-4  mx-auto my-8 rounded hover:text-purple-300">Submit</button>
             </form>
         </section>
     </x-app-layout>

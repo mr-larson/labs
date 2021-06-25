@@ -3,7 +3,7 @@
 @section('content')
     <x-app-layout>
         <section class="py-12">
-            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300">Section nav</h2>
+            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section nav</h2>
             <div class="container">
                 @foreach ($navs as $nav)
                 <div class="col col-sm-4 my-4">
@@ -14,7 +14,7 @@
                             <h2 class="text-green-300 text-opacity-80">{{ $nav->li }}</h2>
                             <div class="buttons flex justify-center">
                                 @can('update', $nav)
-                                    <a href="{{route('nav.edit',$nav->id) }}" class="bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                    <a href="{{route('nav.edit',$nav->id) }}" class="bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
                                 @endcan
                             </div>
                         </div>

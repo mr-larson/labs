@@ -27,5 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ServiceSeeder::class);
         $this->call(TestimonialSeeder::class);
         $this->call(NavSeeder::class);
+        $this->call(ArticleSeeder::class);
+        $this->call(MapSeeder::class);
     }
 }

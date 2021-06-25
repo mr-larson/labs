@@ -3,7 +3,7 @@
 @section('content')
     <x-app-layout>
         <section class="py-12">
-            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300">Section titre</h2>
+            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section titre</h2>
             <div class="container">
                 @foreach ($titres as $titre)
                     <div class="col col-sm-3 my-4">
@@ -13,7 +13,7 @@
                             <p class="text-green-300 text-opacity-80">{{ $titre->p2 }}</p>
                             <div class="buttons flex justify-center">
                                 @can('update', $titre)
-                                    <a href="{{route('titre.edit',$titre->id) }}" class="bg-gradient-to-r from-green-400 to-purple-500 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                    <a href="{{route('titre.edit',$titre->id) }}" class="hover:text-purple-300 bg-gradient-to-r from-green-400 to-purple-500 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
                                 @endcan
                             </div>
                         </div>

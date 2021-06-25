@@ -6,6 +6,7 @@ use App\Http\Controllers\FooterController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\NavController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
@@ -18,6 +19,7 @@ use App\Models\Feature;
 use App\Models\Footer;
 use App\Models\Image;
 use App\Models\Link;
+use App\Models\Map;
 use App\Models\Nav;
 use App\Models\Service;
 use App\Models\Slider;
@@ -50,7 +52,8 @@ Route::get('/', function () {
     $sliders = Slider::all(); 
     $testimonials = Testimonial::all(); 
     $adresse = Adresse::first();
-    return view('home',compact('users','nav','footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'services', 'testimonials'));
+    $map = Map::first();
+    return view('home',compact('users','nav','footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'services', 'testimonials', 'map'));
 })->name('home');
 
 Route::get('/services', function () {
@@ -81,8 +84,9 @@ Route::get('/read', function () {
     $images = Image::all(); 
     $users = User::all();
     $nav = Nav::all();
+    $titres = Titre::all();
     $footer = Footer::first();
-    return view('read',compact('users','nav','footer', 'images'));
+    return view('read',compact('users','nav','footer', 'images', 'titres'));
 })->name('read');
 
 Route::get('/contact', function () {
@@ -92,8 +96,9 @@ Route::get('/contact', function () {
     $link = Link::first();
     $nav = Nav::all();
     $footer = Footer::first();
-    $adresse = Adresse::first();  
-    return view('contact',compact('users','nav','footer', 'link', 'titres', 'adresse', 'images'));
+    $adresse = Adresse::first(); 
+    $map = Map::first(); 
+    return view('contact',compact('users','nav','footer', 'link', 'titres', 'adresse', 'images', 'map'));
 })->name('contact');
 
 Route::get('/dashboard', function () {
@@ -109,7 +114,8 @@ Route::get('/dashboard', function () {
     $features = Feature::all();
     $services = Service::all();
     $testimonials = Testimonial::all(); 
-    return view('dashboard',compact('users','nav', 'footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'features', 'services', 'testimonials'));
+    $map = Map::first();
+    return view('dashboard',compact('users','nav', 'footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'features', 'services', 'testimonials', 'map'));
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
@@ -144,6 +150,9 @@ Route::resource("/feature", FeatureController::class)->middleware(['auth']);
 // Service
 Route::resource("/service", ServiceController::class)->middleware(['auth']);
 
+//Contact
+// Map
+Route::resource("/map", MapController::class)->middleware(['auth']);
 
 
 //Route pour l'email (Contact.blade.php)

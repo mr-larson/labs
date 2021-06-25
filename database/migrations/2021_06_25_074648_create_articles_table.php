@@ -15,6 +15,15 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->string("h2");
+            $table->string("day");
+            $table->string("h3");
+            $table->text("p1")->nullable();
+            $table->text("p2")->nullable();
+            $table->text("p3")->nullable();
+            $table->string("img");
+            $table->foreignId('user_id')->constrained('users')->onDelete("cascade")->onUpdate("cascade");
+            /* $table->boolean('confirmed'); */
             $table->timestamps();
         });
     }

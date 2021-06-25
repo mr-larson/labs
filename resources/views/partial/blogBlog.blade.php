@@ -5,7 +5,7 @@
         <div class="page-info">
             <h2>{{ $nav[2]->li }}</h2>
             <div class="page-links">
-                <a href="#">Home</a>
+                <a href="#">{{ $nav[0]->li }}</a>
                 <span>{{ $nav[2]->li }}</span>
             </div>
         </div>
