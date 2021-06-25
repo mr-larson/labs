@@ -12,7 +12,7 @@
                 @endcan
                 @foreach ($testimonials as $testimonial)
                 <div class="col col-sm-3 my-4">
-                    <div class="rounded overflow-hidden shadow-lg p-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
+                    <div class="rounded overflow-hidden shadow-lg p-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-800">
                         <div class="">
                             <h3 class="text-white">testimonial</h3>
                         </div>
@@ -24,13 +24,13 @@
                             <p class="text-green-300 text-opacity-80">{{ $testimonial->p2 }}</p>
                             <div class="buttons flex justify-center">
                                 @can('update', $testimonial)
-                                    <a href="{{route('testimonial.edit',$testimonial->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                    <a href="{{route('testimonial.edit',$testimonial->id) }}" class="bg-gradient-to-r from-green-400 to-purple-500 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
                                 @endcan
                                 @can('delete', $testimonial)
                                     <form action="{{ route('testimonial.destroy',$testimonial->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="bg-red-500 hover:bg-red-600 text-white px-1 rounded-lg m-2 w-auto text-center">Delete</button>
+                                        <button class="bg-gradient-to-r from-red-400 to-purple-500 text-white px-1 rounded-lg m-2 w-auto text-center">Delete</button>
                                     </form>
                                 @endcan
                             </div>

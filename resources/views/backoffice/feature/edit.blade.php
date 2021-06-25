@@ -16,7 +16,7 @@
                 </ul>
             @endif
             <!--Edit Card-->
-            <form method="POST" class="grid grid-cols-1 overlay2 bg-purple-600 hover:bg-purple-800 rounded shadow-lg mx-auto p-3 w-3/5 mb-4" action="{{ route('feature.update', $feature->id) }}" enctype="multipart/form-data">
+            <form method="POST" class="grid grid-cols-1 overlay2 bg-purple-800 rounded shadow-lg mx-auto p-3 w-3/5 mb-4" action="{{ route('feature.update', $feature->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="my-4  col-span-2">
@@ -31,7 +31,7 @@
                     <label class="text-white text-base">Icon</label>
                     <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $feature->i }}" name="i">
                 </div>
-                <button type="submit" class="hover:bg-indigo-800 text-white font-bold py-2 px-4  mx-auto my-8 rounded">Submit</button>
+                <button type="submit" class="bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-800 text-white font-bold py-2 px-4  mx-auto my-8 rounded">Submit</button>
             </form>
         </section>
     </x-app-layout>

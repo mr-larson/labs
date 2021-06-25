@@ -12,7 +12,7 @@
                 @endcan
                 @foreach ($services as $service)
                     <div class="col col-sm-4 my-4">
-                        <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
+                        <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-800">
                             <div class="">
                                 <h3 class="text-white text-bold">service</h3>
                             </div>

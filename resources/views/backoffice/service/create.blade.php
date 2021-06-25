@@ -16,7 +16,7 @@
             </ul>
         @endif
         <!--Edit Card-->
-        <form method="POST" class="grid grid-cols-1 overlay2 bg-purple-600 hover:bg-purple-800 rounded shadow-lg mx-auto p-3 w-3/5 mb-4" action="{{ route('service.store') }}" enctype="multipart/form-data">
+        <form method="POST" class="grid grid-cols-1 overlay2 bg-purple-800 rounded shadow-lg mx-auto p-3 w-3/5 mb-4" action="{{ route('service.store') }}" enctype="multipart/form-data">
             @csrf
             @method('post')
             <div class="my-4 col-span-2">

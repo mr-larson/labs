@@ -31,7 +31,7 @@
                             </div>
                             <div class="buttons flex justify-center">
                               @can('update', $link)
-                                  <a href="{{route('link.edit',$link->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
+                                  <a href="{{route('link.edit',$link->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-700 text-white">Edit</a>
                               @endcan
                           </div>
                         </a>
@@ -47,7 +47,7 @@
                         <div class="buttons flex justify-center">
                           @can('create', App\models\Testimonial::class)
                             <div class=" flex justify-center my-2">
-                                <a class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white" href="/testimonial/create">+ Create</a>
+                                <a class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-700 text-white" href="/testimonial/create">+ Create</a>
                             </div>
                           @endcan
                         </div>
@@ -73,7 +73,7 @@
                             </div>
                             <div class="buttons flex justify-center">
                                 @can('update', $adresse)
-                                    <a href="{{route('adresse.edit',$adresse->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
+                                    <a href="{{route('adresse.edit',$adresse->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-700 text-white">Edit</a>
                                 @endcan
                             </div>
                         </a>
@@ -86,11 +86,6 @@
                               <p class="text-white text-3xl">features</p>
                               <p class="text-white opacity-50 font-light py-3">Gérer votre section features premium</p>
                           </div>
-                          <div class="buttons flex justify-center">
-                              @can('update', $features)
-                                  <a href="{{route('feature.edit',$feature->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
-                              @endcan
-                          </div>
                       </a>
                     </div>
                     <!-- features end -->
@@ -100,11 +95,6 @@
                           <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
                               <p class="text-white text-3xl">user</p>
                               <p class="text-white opacity-50 font-light py-3">Gérer votre section user</p>
-                          </div>
-                          <div class="buttons flex justify-center">
-                              @can('update', $users)
-                                  <a href="{{route('user.edit',$user->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
-                              @endcan
                           </div>
                       </a>
                     </div>
@@ -118,7 +108,7 @@
                           </div>
                           <div class="buttons flex justify-center">
                               @can('update', $adresse)
-                                  <a href="{{route('adresse.edit',$adresse->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
+                                  <a href="{{route('adresse.edit',$adresse->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-700 text-white">Edit</a>
                               @endcan
                           </div>
                       </a>
@@ -133,7 +123,7 @@
                         </div>
                         <div class="buttons flex justify-center">
                             @can('update', $users)
-                                <a href="{{route('user.edit',$user->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
+                                <a href="{{route('user.edit',$user->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-700 text-white">Edit</a>
                             @endcan
                         </div>
                     </a>
@@ -150,7 +140,7 @@
                           <div class="buttons flex justify-center">
                             @can('create', App\models\Slider::class)
                               <div class=" flex justify-center my-2">
-                                  <a class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white" href="/slider/create">+ Create</a>
+                                  <a class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-700 text-white" href="/slider/create">+ Create</a>
                               </div>
                             @endcan
                           </div>
@@ -179,7 +169,7 @@
                           </div>
                           <div class="buttons flex justify-center">
                             @can('update', $video)
-                                <a href="{{route('video.edit',$video->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
+                                <a href="{{route('video.edit',$video->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-700 text-white">Edit</a>
                             @endcan
                           </div>
                       </a>
@@ -198,7 +188,7 @@
                           </div>
                           <div class="buttons flex justify-center">
                               @can('update', $footer)
-                                  <a href="{{route('footer.edit',$footer->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-indigo-500 hover:bg-indigo-700 text-white">Edit</a>
+                                  <a href="{{route('footer.edit',$footer->id) }}" class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-700 text-white">Edit</a>
                               @endcan
                           </div>
                         </div>

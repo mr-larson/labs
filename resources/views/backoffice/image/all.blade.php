@@ -7,7 +7,7 @@
             <div class="container">
                 @foreach ($images as $image)
                 <div class="col col-sm-4 my-4 h-70">
-                    <div class="rounded overflow-hidden shadow-lg p-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
+                    <div class="rounded overflow-hidden shadow-lg p-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-800">
                         <div class="">
                             <h3 class="text-white">image</h3>
                         </div>
@@ -16,7 +16,7 @@
                             </div>
                             <div class="buttons flex justify-center">
                                 @can('update', $image)
-                                    <a href="{{route('image.edit',$image->id) }}" class="bg-indigo-600 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                    <a href="{{route('image.edit',$image->id) }}" class="bg-gradient-to-r from-green-400 to-purple-500 hover:bg-indigo-700 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
                                 @endcan
                             </div>
                         </div>
