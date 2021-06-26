@@ -25,14 +25,10 @@
                     </div>
                     <div class="my-4  col-span-2">
                         <label class="text-white text-base">Photo de profil</label>
-                        <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $user->img }}" name="img">
-                    </div>
-                    <div class="my-4  col-span-2">
-                        <label class="text-white text-base">Poste</label>
-                        <input type="select" class="px-3 py-1 w-full rounded-md" value="{{ $user->role->poste }}" name="poste">
+                        <input type="file" class="px-3 py-1 w-full rounded-md" value="{{ $user->img }}" name="img" id="preview_link">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Poste</label>
+                        <label class="form-label text-white text-base">Poste</label>
                         <select class="custom-select"  name="poste" value="{{ $user->role->poste }}">
                             <option selected>choisissez un poste</option>
                             <option value="admin">Admin</option> 

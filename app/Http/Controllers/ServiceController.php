@@ -25,7 +25,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize("service-create", Service::class);
+        return view('backoffice.service.create');
     }
 
     /**

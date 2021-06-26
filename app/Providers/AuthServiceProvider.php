@@ -54,10 +54,6 @@ class AuthServiceProvider extends ServiceProvider
             return in_array(Auth::user()->role_id, [1, 2]);
         });
 
-        Gate::define('service-edit', function () {
-            return in_array(Auth::user()->role_id, [1, 2]);
-        });
-
         Gate::define('nav-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
@@ -72,17 +68,38 @@ class AuthServiceProvider extends ServiceProvider
 
 
         //Create-Edit
+        //Slider
         Gate::define('slider-create', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
         Gate::define('slider-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
-
+        //Testimonial
         Gate::define('testimonial-create', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
         Gate::define('testimonial-edit', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+        //Service
+        Gate::define('service-create', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+        Gate::define('service-edit', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+        //Article
+        Gate::define('article-create', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+        Gate::define('article-edit', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+        Gate::define('article-confirm', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+        Gate::define('article-confirmed', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
     }

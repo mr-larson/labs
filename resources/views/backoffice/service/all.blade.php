@@ -13,12 +13,11 @@
                 @foreach ($services as $service)
                     <div class="col col-sm-4 my-4">
                         <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-800">
-                            <div class="">
-                                <h3 class="text-white text-bold">service</h3>
-                            </div>
-                            <h2 class="text-green-300 text-opacity-80">{{ $service->h2 }}</h2>
+                            <h2 class="text-white text-opacity-80">{{ $service->h2 }}</h2>
                             <p class="text-green-300 text-opacity-80 text-center">{{ $service->p }}</p>
-                            <p class="text-green-300 text-opacity-80">{{ $service->i }}</p>
+                            <div class="icon">
+                                <i class="{{ $service->i }} font-bold text-white"></i>
+                            </div>
                             <div class="buttons flex justify-center">
                                 @can('update', $service)
                                     <a href="{{route('service.edit',$service->id) }}" class="bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>

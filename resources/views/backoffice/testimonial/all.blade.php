@@ -13,15 +13,13 @@
                 @foreach ($testimonials as $testimonial)
                 <div class="col col-sm-3 my-4">
                     <div class="rounded overflow-hidden shadow-lg p-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-800">
-                        <div class="">
-                            <h3 class="text-white">testimonial</h3>
-                        </div>
-                            <h2 class="text-green-300 text-opacity-80">{{ $testimonial->h2 }}</h2>
+                        <div class="text-center">   
+                            <h2 class="text-white text-opacity-80">{{ $testimonial->h2 }}</h2>
                             <div class="py-6">
                                 <img class="" src="{{asset("img/avatar/" . $testimonial->img) }}" alt="img">
                             </div>
                             <p class="text-green-300 text-opacity-80">{{ $testimonial->p }}</p>
-                            <p class="text-green-300 text-opacity-80">{{ $testimonial->p2 }}</p>
+                            <p class="text-white text-opacity-80">{{ $testimonial->p2 }}</p>
                             <div class="buttons flex justify-center">
                                 @can('update', $testimonial)
                                     <a href="{{route('testimonial.edit',$testimonial->id) }}" class="hover:text-purple-300 bg-gradient-to-r from-green-400 to-purple-500 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
@@ -34,6 +32,7 @@
                                     </form>
                                 @endcan
                             </div>
+                        </div>
                         </div>
                     </div>
                 @endforeach

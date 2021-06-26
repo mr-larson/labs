@@ -29,5 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NavSeeder::class);
         $this->call(ArticleSeeder::class);
         $this->call(MapSeeder::class);
+        $this->call(CommentSeeder::class);
     }
 }

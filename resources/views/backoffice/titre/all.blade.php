@@ -8,7 +8,7 @@
                 @foreach ($titres as $titre)
                     <div class="col col-sm-3 my-4">
                         <div class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-800">
-                            <h2 class="text-green-300 text-opacity-80">{{ $titre->h2 }}</h2>
+                            <h2 class="text-white text-opacity-80">{{ $titre->h2 }}</h2>
                             <p class="text-green-300 text-opacity-80">{{ $titre->p1 }}</p>
                             <p class="text-green-300 text-opacity-80">{{ $titre->p2 }}</p>
                             <div class="buttons flex justify-center">
