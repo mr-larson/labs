@@ -22,4 +22,10 @@ class Article extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+    public function tags(){
+        return $this->belongsToMany(Tag::class,"article_tags");
+    }
+    public function categories(){
+        return $this->belongsToMany(Category::class,"article_categories");
+    }
 }

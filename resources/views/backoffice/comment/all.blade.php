@@ -22,13 +22,13 @@
                             </div>
                             <div class="buttons flex justify-center">
                                 @can('update', $comment)
-                                    <a href="{{route('comment.edit',$comment->id) }}" class="bg-gradient-to-r from-green-400to-purple-500 hover:text-purple-300 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                    <a href="{{route('comment.edit',$comment->id) }}" class="bg-gradient-to-r from-green-400to-purple-500 hover:text-purple-300 text-white py-1 px-4 rounded-lg m-2 w-auto text-center">Edit</a>
                                 @endcan
                                 @can('delete', $comment)
                                     <form action="{{ route('comment.destroy',$comment->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="bg-gradient-to-r from-red-400 to-purple-500 text-white px-1 rounded-lg m-2 w-auto text-center hover:text-purple-300">Delete</button>
+                                        <button class="bg-gradient-to-r from-red-400 to-purple-500 text-white py-1 px-4 rounded-lg m-2 w-auto text-center hover:text-purple-300">Delete</button>
                                     </form>
                                 @endcan
                             </div>

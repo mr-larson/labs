@@ -16,7 +16,7 @@
                                 </div>
                                 <div class="buttons flex justify-center">
                                     @can('update', $feature)
-                                        <a href="{{route('feature.edit',$feature->id) }}" class="bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                        <a href="{{route('feature.edit',$feature->id) }}" class="bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white py-1 px-4 rounded-lg m-2 w-auto text-center">Edit</a>
                                     @endcan
                                 </div>
                             </div>

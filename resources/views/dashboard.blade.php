@@ -167,53 +167,35 @@
                 </a>
             </div>
             <!-- Commentaire end -->
-            <!-- map -->
-            <div
-                class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
-                <a href="{{ route('map.index') }}" class="block ">
-                    <div
-                        class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
-                        <p class="text-white text-3xl">map</p>
-                        <p class="text-white opacity-50 font-light py-3">Gérer votre section map</p>
-                    </div>
-                    <div class="buttons flex justify-center">
-                        @can('update', $map)
-                            <a href="{{ route('map.edit', $map->id) }}"
-                                class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white">Edit</a>
-                        @endcan
-                    </div>
-                </a>
-            </div>
-            <!-- map end -->
             <!-- slider -->
             <div
-                class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
-                <a href="{{ route('slider.index') }}" class="block ">
-                    <div
-                        class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
-                        <p class="text-white text-3xl p-2">Slider</p>
-                        <img class="h-60 px-4 py-10" src="{{ asset('img/' . $sliders[0]->img) }}" alt="">
-                        <p class="text-white opacity-50 font-light py-3">Gérer votre section slider</p>
-                    </div>
-                    <div class="buttons flex justify-center">
-                        @can('create', App\models\Slider::class)
-                            <div class=" flex justify-center my-2">
-                                <a class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white"
-                                    href="/slider/create">+ Create</a>
-                            </div>
-                        @endcan
-                    </div>
-                </a>
+            class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md ">
+            <a href="{{ route('slider.index') }}" class="block ">
+                <div
+                class="py-16 rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800 h-70">
+                <p class="text-white text-3xl p-2">Slider</p>
+                <img class="h-40 px-4" src="{{ asset('img/' . $sliders[0]->img) }}" alt="">
+                <p class="text-white opacity-50 font-light py-3">Gérer votre section slider</p>
             </div>
-            <!-- slider end -->
-            <!-- image -->
-            <div
+            <div class="buttons flex justify-center">
+                @can('create', App\models\Slider::class)
+                <div class=" flex justify-center my-2">
+                    <a class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white"
+                    href="/slider/create">+ Create</a>
+                </div>
+                @endcan
+            </div>
+        </a>
+    </div>
+    <!-- slider end -->
+    <!-- image -->
+    <div
                 class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
                 <a href="{{ route('image.index') }}" class="block ">
                     <div
                         class="py-16 rounded overflow-hidden shadow-lg  flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
-                        <p class="text-white text-3xl p-2">Image</p>
-                        <img class="h-30 px-4 py-10" src="{{ asset('img/' . $images[0]->img) }}" alt="">
+                        <p class="text-white text-3xl p-2 h-70">Image</p>
+                        <img class="h-40 px-4 py-10" src="{{ asset('img/' . $images[0]->img) }}" alt="">
                         <p class="text-white opacity-50 font-light py-3">Gérer la section images</p>
                     </div>
                 </a>
@@ -224,20 +206,38 @@
                 class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
                 <a href="{{ route('video.index') }}" class="block ">
                     <div
-                        class="rounded overflow-hidden shadow-lg  flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
-                        <p class="text-white text-3xl p-2">Video</p>
-                        <img class="h-90 px-4 py-10" src="{{ asset('img/' . $video->img) }}" alt="">
+                        class="py-16 rounded overflow-hidden shadow-lg  flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
+                        <p class="text-white text-3xl p-2 h-70">Video</p>
+                        <img class="h-40 px-4" src="{{ asset('img/' . $video->img) }}" alt="">
                         <p class="text-white opacity-50 font-light py-3">Gérer la section Videos</p>
                     </div>
                     <div class="buttons flex justify-center">
                         @can('update', $video)
-                            <a href="{{ route('video.edit', $video->id) }}"
-                                class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white">Edit</a>
-                        @endcan
-                    </div>
-                </a>
-            </div>
-            <!-- video end -->
+                        <a href="{{ route('video.edit', $video->id) }}"
+                            class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white">Edit</a>
+                            @endcan
+                        </div>
+                    </a>
+                </div>
+                <!-- video end -->
+                <!-- map -->
+                <div
+                    class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+                    <a href="{{ route('map.index') }}" class="block ">
+                        <div
+                            class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
+                            <p class="text-white text-3xl">map</p>
+                            <p class="text-white opacity-50 font-light py-3">Gérer votre section map</p>
+                        </div>
+                        <div class="buttons flex justify-center">
+                            @can('update', $map)
+                                <a href="{{ route('map.edit', $map->id) }}"
+                                    class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white">Edit</a>
+                            @endcan
+                        </div>
+                    </a>
+                </div>
+                <!-- map end -->
         </div>
 
         <!-- footer -->

@@ -82,7 +82,21 @@
                                 <h2 class="post-title">{{ $article->h2 }}</h2>
                                 <div class="post-meta">
                                     <a href="">{{ $article->user->nom }}</a>
-                                    <a href="">Design, Inspiration</a>
+                                    @php
+                                        $i=0;
+                                    @endphp
+                                    <a href="">@foreach ($article->tags as $tag)
+                                                @if ($article->tags->count()==$i+1)
+                                                    
+                                                    {{ $tag->name }}
+                                                @else  
+                                                    {{ $tag->name . " ," }}
+                                                @endif
+                                                @php
+                                                    $i+=1;
+                                                @endphp
+                                                @endforeach
+                                     </a>
                                     <a href="">2 Comments</a>
                                 </div>
                                 <p>{{ substr($article->p, 0, 315) }}...</p>

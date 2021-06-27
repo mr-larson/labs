@@ -16,7 +16,7 @@
                         <p>{{ $video->a }}</p>
                         <div class="buttons flex justify-center">
                             @can('update', $video)
-                                <a href="{{route('video.edit',$video->id) }}" class="hover:text-purple-300 bg-gradient-to-r from-green-400 to-purple-500 text-white px-2 rounded-lg m-2 w-auto text-center">Edit</a>
+                                <a href="{{route('video.edit',$video->id) }}" class="hover:text-purple-300 bg-gradient-to-r from-green-400 to-purple-500 text-white py-1 px-4 rounded-lg m-2 w-auto text-center">Edit</a>
                             @endcan
                         </div>
                     </div>

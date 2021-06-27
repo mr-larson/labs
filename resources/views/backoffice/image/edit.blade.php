@@ -20,10 +20,10 @@
             <form method="POST" class="grid grid-cols-1 overlay2 bg-purple-800 rounded shadow-lg mx-auto p-3 w-3/5 mb-4" action="{{ route('image.update', $image->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                    <div class="my-4  col-span-2">
+                    <div class="my-4  col-span-2 m-auto">
                         <label class="text-white text-base">Image de la couverture</label>
                         <div class="picture_overview" >
-                            <img src="{{ asset("img/" . $image->img) }}" alt="" id="preview_link">
+                            <img class="h-64 m-auto" src="{{ asset("img/" . $image->img) }}" alt="" id="preview_link">
                         </div>
                         <input value="{{ $image->img }}" name="img" class="border border-gray-300 p-3 w-full rounded-sm text-white" type="file" id="pictureSelector">
                     </div>

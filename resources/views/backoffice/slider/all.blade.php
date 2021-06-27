@@ -27,7 +27,7 @@
                                     <form action="{{ route('slider.destroy',$slider->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="bg-gradient-to-r from-red-400 to-purple-500 text-white px-1 rounded-lg m-2 w-auto text-center hover:text-purple-300">Delete</button>
+                                        <button class="bg-gradient-to-r from-red-400 to-purple-500 text-white py-1 px-4 rounded-lg m-2 w-auto text-center hover:text-purple-300">Delete</button>
                                     </form>
                                 @endcan
                             </div>

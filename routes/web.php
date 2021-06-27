@@ -84,7 +84,8 @@ Route::get('/blog', function () {
     $footer = Footer::first(); 
     $adresse = Adresse::first();
     $articles = Article::all(); 
-    $comments = Comment::all(); 
+    $comments = Comment::all();
+    /* $categories = Categorie::all();  */
     return view('blog',compact('users','nav','footer', 'link', 'titres', 'adresse', 'images', 'articles', 'comments'));
 })->name('blog');
 
