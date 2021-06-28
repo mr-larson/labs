@@ -100,7 +100,7 @@
                                                 @endphp
                                                 @endforeach
                                     </a>
-								<a href="">2 Comments</a>
+								<a href="">{{ $article->comments->count() }} Comment</a>
 							</div>
 							<p>{!! str_replace(["/"], ["<br>"], $article->p) !!}</p>
 						</div>

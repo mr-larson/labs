@@ -96,7 +96,7 @@
                                                 @endphp
                                                 @endforeach
                                      </a>
-                                    <a href="">2 Comments</a>
+                                    <a href="">{{ $article->comments->count() }} Comment</a>
                                 </div>
                                 <p>{{ substr($article->p, 0, 315) }}...</p>
                                 <a href="{{ route('article.show', $article) }}" class="read-more">Read More</a>
