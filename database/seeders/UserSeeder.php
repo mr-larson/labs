@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
             "email" => "walter@mail.com",
             "password" => Hash::make("aaaaaaaa"),
             "img" => "4.png",
+            "presentation" => "Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.",
             'role_id'=>'1'
         ]);
 
@@ -28,6 +29,7 @@ class UserSeeder extends Seeder
             "email" => "sarah@mail.com",
             "password" => Hash::make("aaaaaaaa"),
             "img" => "2.jpg",
+            "presentation" => "Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.",
             'role_id'=>'2'
         ]);
         
@@ -36,6 +38,7 @@ class UserSeeder extends Seeder
             "email" => "amanda@mail.com",
             "password" => Hash::make("aaaaaaaa"),
             "img" => "1.jpg",
+            "presentation" => "Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.",
             'role_id'=>'3'
         ]);
 
@@ -44,6 +47,7 @@ class UserSeeder extends Seeder
             "email" => "william@mail.com",
             "password" => Hash::make("aaaaaaaa"),
             "img" => "3.jpg",
+            "presentation" => "Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.",
             'role_id'=>'4'
         ]);
 
@@ -52,6 +56,7 @@ class UserSeeder extends Seeder
             "email" => "cem@mail.com",
             "password" => Hash::make("aaaaaaaa"),
             "img" => "5.jpg",
+            "presentation" => "Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique.",
             'role_id'=>'5'
         ]);
     }

@@ -28,7 +28,7 @@
             </header> --}}
 
             <!-- Page Content -->
-            <main class="bg-gray-200 overlay2 min-h-screen">
+            <main class="bg-gray-200 overlay2 min-h-screen" id="particles-js">
                 {{ $slot }}
             </main>
         </div>
