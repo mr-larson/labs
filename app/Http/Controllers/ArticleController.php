@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Category;
 use App\Models\Image;
 use App\Models\Nav;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -76,7 +78,9 @@ class ArticleController extends Controller
     {
         $nav=Nav::all();
         $images = Image::all(); 
-        return view('partial.read', compact('article', 'nav', 'images'));
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('partial.read', compact('article', 'nav', 'images', 'tags', 'categories'));
     }
 
     /**

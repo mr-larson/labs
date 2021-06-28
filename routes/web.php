@@ -18,6 +18,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Models\Adresse;
 use App\Models\Article;
+use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Feature;
 use App\Models\Footer;
@@ -27,6 +28,7 @@ use App\Models\Map;
 use App\Models\Nav;
 use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Tag;
 use App\Models\Testimonial;
 use App\Models\Titre;
 use App\Models\User;
@@ -83,10 +85,12 @@ Route::get('/blog', function () {
     $nav = Nav::all();
     $footer = Footer::first(); 
     $adresse = Adresse::first();
-    $articles = Article::all(); 
+    $articles = Article::all();
+    $categories = Category::all();
+    $tags = Tag::all();
     $comments = Comment::all();
     /* $categories = Categorie::all();  */
-    return view('blog',compact('users','nav','footer', 'link', 'titres', 'adresse', 'images', 'articles', 'comments'));
+    return view('blog',compact('users','nav','footer', 'link', 'titres', 'adresse', 'images', 'articles', 'comments','tags', 'categories'));
 })->name('blog');
 
 /* Route::get('/read', function () {

@@ -8,9 +8,9 @@
     <nav>
         <ul class="menu-list">
             <li class="{{ request()->routeIs("home") ? 'active' : ' '  }}"><a href="/">{{ $nav[0]->li }}</a></li>
-            <li class="{{ request()->routeIs("services") ? 'active' : ' '  }}"><a href="services">{{ $nav[1]->li }}</a></li>
-            <li class="{{ request()->routeIs("blog") ? 'active' : ' '  }}"><a href="blog">{{ $nav[2]->li }}</a></li>
-            <li class="{{ request()->routeIs("contact") ? 'active' : ' '  }}"><a href="contact">{{ $nav[3]->li }}</a></li>
+            <li class="{{ request()->routeIs("services") ? 'active' : ' '  }}"><a href="/services">{{ $nav[1]->li }}</a></li>
+            <li class="{{ request()->routeIs("blog") ? 'active' : ' '  }}"><a href="/blog">{{ $nav[2]->li }}</a></li>
+            <li class="{{ request()->routeIs("contact") ? 'active' : ' '  }}"><a href="/contact">{{ $nav[3]->li }}</a></li>
         </ul>
     </nav>
 </header>
