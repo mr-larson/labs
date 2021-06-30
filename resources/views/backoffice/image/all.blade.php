@@ -3,13 +3,13 @@
 @section('content')
     <x-app-layout>
         <section class="py-12">
-            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section image</h2>
+            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-bold rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section image</h2>
             <div class="container">
                 @foreach ($images as $image)
-                <div class="col col-sm-4 my-4 h-70">
+                <div class="col col-sm-6 my-4 h-70">
                     <div class="rounded overflow-hidden shadow-lg p-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-800">
                         <div class="">
-                            <h3 class="text-white">image</h3>
+                            <h3 class="text-white text-4xl">Image {{ $image->id }}</h3>
                         </div>
                             <div class="py-6">
                                 <img class="h-44" src="{{asset("img/" . $image->img) }}" alt="img">

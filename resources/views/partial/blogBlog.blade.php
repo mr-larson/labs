@@ -22,7 +22,7 @@
                         <!-- Post item -->
                         <div class="post-item">
                             <div class="post-thumbnail">
-                                <img src="img/blog/{{ $article->img }}" alt="">
+                                <img style="object-fit: cover; object-position: center; height: 270px; width: 100%;" src="img/blog/{{ $article->img }}" alt="">
                                 <div class="post-date">
                                     <h2>
                                         {{ substr($article->created_at, 8, 2) }}
@@ -91,7 +91,7 @@
                                                 @else  
                                                     {{ $tag->name . " ," }}
                                                 @endif
-                                                @php
+                                                    @php
                                                     $i+=1;
                                                 @endphp
                                                 @endforeach
@@ -108,9 +108,7 @@
 
                 <!-- Pagination -->
                 <div class="page-pagination">
-                    <a class="active" href="">01.</a>
-                    <a href="">02.</a>
-                    <a href="">03.</a>
+                    {{ $articles->links() }}
                 </div>
             </div>
             <!-- Sidebar area -->

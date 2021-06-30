@@ -15,7 +15,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::paginate(2);
+        $sliders = Slider::paginate(4);
         return view("backoffice.slider.all", compact("sliders"));
     }
 

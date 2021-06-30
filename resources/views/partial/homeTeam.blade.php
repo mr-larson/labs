@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="member">
-                    <img src="img/team/{{ $users[$i]->img }}" alt="">
+                    <img style="object-fit: cover; object-position: center; height: 400px; width: 300px;" src="img/team/{{ $users[$i]->img }}" alt="">
                     <h2>{{ $users[$i]->nom }}</h2>
                     <h3>{{ $users[$i]->role->poste }}</h3>
                 </div>
@@ -19,7 +19,7 @@
             <!-- single member -->
                 <div class="col-sm-4">
                     <div class="member">
-                        <img src="{{asset("img/team/" . $users[0]->img) }}" alt="">
+                        <img style="object-fit: cover; object-position: center; height: 400px; width: 300px;" src="{{asset("img/team/" . $users[0]->img) }}" alt="">
                         <h2>{{ $users[0]->nom }}</h2>
                         <h3>{{ $users[0]->role->poste}}</h3>
                     </div>
@@ -27,7 +27,7 @@
             @if ($i === count($users)-1)
                 <div class="col-sm-4">
                     <div class="member">
-                        <img src="img/team/{{ $users[$i-1]->img }}" alt="">
+                        <img style="object-fit: cover; object-position: center; height: 400px; width: 300px;" src="img/team/{{ $users[$i-1]->img }}" alt="">
                         <h2>{{ $users[$i-1]->nom }}</h2>
                         <h3>{{ $users[$i-1]->role->poste }}</h3>
                     </div>
@@ -35,7 +35,7 @@
             @else
                 <div class="col-sm-4">
                     <div class="member">
-                        <img src="img/team/{{ $users[$i+1]->img }}" alt="">
+                        <img style="object-fit: cover; object-position: center; height: 400px; width: 300px;" src="img/team/{{ $users[$i+1]->img }}" alt="">
                         <h2>{{ $users[$i+1]->nom }}</h2>
                         <h3>{{ $users[$i+1]->role->poste }}</h3>
                     </div>

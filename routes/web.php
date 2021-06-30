@@ -10,6 +10,7 @@ use App\Http\Controllers\LinkController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\NavController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\TestimonialController;
@@ -47,45 +48,45 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $users = User::all();
+    $users = User::paginate();
     $titres = Titre::all();
     $link = Link::first();
-    $services = Service::all();
+    $services = Service::paginate();
     $video = Video::first();
     $nav = Nav::all();
     $footer = Footer::first();
     $images = Image::all(); 
-    $sliders = Slider::all(); 
-    $articles = Article::all(); 
-    $testimonials = Testimonial::all(); 
+    $sliders = Slider::paginate(); 
+    $articles = Article::paginate(); 
+    $testimonials = Testimonial::paginate(); 
     $adresse = Adresse::first();
     $map = Map::first();
     return view('home',compact('users','nav','footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'services', 'testimonials', 'map', 'articles'));
 })->name('home');
 
 Route::get('/services', function () {
-    $users = User::all();
+    $users = User::paginate();
     $titres = Titre::all();
     $features = Feature::all();
-    $services = Service::all();
+    $services = Service::paginate(9);
     $link = Link::first();
     $nav = Nav::all();
     $footer = Footer::first();
     $images = Image::all(); 
     $adresse = Adresse::first();
-    $articles = Article::all();  
+    $articles = Article::paginate();  
     return view('services',compact('users','nav','footer', 'link', 'titres', 'images', 'adresse', 'features', 'services', 'articles'));
 })->name('services');
 
 Route::get('/blog', function () {
-    $users = User::all();
+    $users = User::paginate();
     $images = Image::all(); 
     $titres = Titre::all();
     $link = Link::first();
     $nav = Nav::all();
     $footer = Footer::first(); 
     $adresse = Adresse::first();
-    $articles = Article::all();
+    $articles = Article::paginate(3);
     $categories = Category::all();
     $tags = Tag::all();
     $comments = Comment::all();
@@ -104,7 +105,7 @@ Route::get('/blog', function () {
 
 Route::get('/contact', function () {
     $images = Image::all(); 
-    $users = User::all();
+    $users = User::paginate();
     $titres = Titre::all();
     $link = Link::first();
     $nav = Nav::all();
@@ -115,7 +116,7 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/dashboard', function () {
-    $users = User::all();
+    $users = User::paginate();
     $titres = Titre::all();
     $link = Link::first();
     $video = Video::first();
@@ -123,11 +124,11 @@ Route::get('/dashboard', function () {
     $footer = Footer::first();
     $images = Image::all(); 
     $adresse = Adresse::first();
-    $sliders = Slider::all();  
+    $sliders = Slider::paginate();  
     $features = Feature::all();
-    $services = Service::all();
-    $testimonials = Testimonial::all(); 
-    $articles = Article::all();
+    $services = Service::paginate();
+    $testimonials = Testimonial::paginate(); 
+    $articles = Article::paginate();
     $comments = Comment::all();
     $map = Map::first();
     return view('dashboard',compact('users','nav', 'footer', 'link', 'titres', 'video', 'images', 'adresse', 'sliders', 'features', 'services', 'testimonials', 'map', 'articles', 'comments'));
@@ -183,3 +184,5 @@ Route::resource("/comment", CommentController::class)->middleware(['auth']);
 
 //Route pour l'email (Contact.blade.php)
 Route::post("/send-mail", [MailController::class, "sendMail"]);
+//Route pour le newsletter
+Route::resource("/newsletter",NewsletterController::class);

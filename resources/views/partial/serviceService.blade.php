@@ -38,5 +38,9 @@
             <a href="" class="site-btn">{{ $link->a }}</a>
         </div>
     </div>
+    <!-- Pagination -->
+    <div class="page-pagination">
+        {{ $articles->links() }}
+    </div>
 </div>
 <!-- services section end -->

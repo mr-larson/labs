@@ -5,8 +5,8 @@
     <!--Section links-->
     <x-app-layout>
         <!--Section video-->
-        <section class="services">
-            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section video</h2>
+        <section class="py-12">
+            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-bold rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section video</h2>
             @if ($errors->any())
                 <ul class="bg-red-200 text-red-800 text-center py-3 mx-10 mb-6 text-xl font-light rounded-lg shadow-lg">
 
@@ -21,11 +21,12 @@
                 @csrf
                 @method('PUT')
                     <div class="my-4  col-span-2">
-                        <label class="text-white text-base">liens</label>
+                        <label class="text-white">liens</label>
+                        <p>* Copier ici le lien de la vidéo que vous souhaitez avoir sur votre site *</p>
                         <input type="text" class="px-3 py-1 w-full rounded-md" value="{{ $video->a }}" name="a">
                     </div>
                     <div class="my-4  col-span-2">
-                        <label class="text-white text-base">Image de la couverture</label>
+                        <label class="text-white">Image de la couverture</label>
                         <div class="picture_overview" >
                             <img src="{{ asset("img/" . $video->img) }}" alt="" id="preview_link">
                         </div>

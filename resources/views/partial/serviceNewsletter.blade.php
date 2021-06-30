@@ -7,9 +7,14 @@
             </div>
             <div class="col-md-9">
                 <!-- newsletter form -->
-                <form class="nl-form">
-                    <input type="text" placeholder="Your e-mail here">
-                    <button class="site-btn btn-2">{{ $titres[7]->p1 }}</button>
+                @if (session("message"))
+                  <div class="alert alert-success">{{ session("message") }}</div>
+                @endif
+                <form class="nl-form" action="{{ route('newsletter.store') }}" method="POST">
+                    @csrf
+                    @method('POST')
+                    <input type="text" name="email" placeholder="Your e-mail here">
+                    <button class="site-btn btn-2" type="submit">{{ $titres[7]->p1 }}</button>
                 </form>
             </div>
         </div>

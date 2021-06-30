@@ -3,7 +3,7 @@
 @section('content')
     <x-app-layout>
         <section class="py-12">
-            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section comment</h2>
+            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-bold rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section comment</h2>
             <div class="container">
                 @can('create', App\models\Comment::class)
                     <div class="max-w-6xl mx-auto  flex justify-center my-2">

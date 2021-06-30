@@ -4,7 +4,7 @@
     <x-app-layout>
         <!--Section confirm d'article-->
         <section class="services">
-            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-light rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section Confirm</h2>
+            <h2 class="text-center py-3 mx-10 mb-6 text-4xl font-bold rounded-lg shadow-lg overlay2 bg-green-300 text-purple-800">Section Confirm</h2>
             @if ($errors->any())
                 <ul class="bg-red-200 text-red-800 text-center py-3 mx-10 mb-6 text-xl font-light rounded-lg shadow-lg">
 

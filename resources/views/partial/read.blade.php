@@ -26,7 +26,7 @@
 					<!-- Single Post -->
 					<div class="single-post">
 						<div class="post-thumbnail">
-							<img src="{{asset("img/blog/" . $article->img)}}" alt="">
+							<img style="object-fit: cover; object-position: center; height: 270px; width: 100%;" src="{{asset("img/blog/" . $article->img)}}" alt="">
 							<div class="post-date">
 								<h2>
 									{{ substr($article->created_at, 8, 2) }}

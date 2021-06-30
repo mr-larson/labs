@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate(4);
         $roles = Role::all();
         return view("backoffice.user.all", compact("roles", "users"));
     }

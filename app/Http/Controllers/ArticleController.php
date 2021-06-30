@@ -6,9 +6,13 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Nav;
+use App\Models\Newsletter;
 use App\Models\Tag;
+use App\Notifications\Newsletter as NotificationsNewsletter;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification as FacadesNotification;
 use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
@@ -64,7 +68,7 @@ class ArticleController extends Controller
         $article->created_at = now();
         
         $article->save();
-
+        FacadesNotification::send(Newsletter::all(), new NotificationsNewsletter($article));
         return redirect()->route('article.index', compact('article'))->with("message", "L'article a bien été crée.");
     }
 
