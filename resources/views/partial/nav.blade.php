@@ -11,14 +11,17 @@
             <li class="{{ request()->routeIs("services") ? 'active' : ' '  }}"><a href="/services">{{ $nav[1]->li }}</a></li>
             <li class="{{ request()->routeIs("blog") ? 'active' : ' '  }}"><a href="/blog">{{ $nav[2]->li }}</a></li>
             <li class="{{ request()->routeIs("contact") ? 'active' : ' '  }}"><a href="/contact">{{ $nav[3]->li }}</a></li>
-            <li>
-                <a class="" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    {{ __('Login') }}
-                </a>                             
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="menu-list"> 
-                    @csrf
-                </form>
-            </li>
+            @if (Route::has('login'))
+            @auth
+            <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+            @else
+            <li><a href="{{ route('login') }}">Log in</a></li>
+
+            @if (Route::has('register'))
+                <li><a href="{{ route('register') }}">Register</a></li>
+            @endif
+            @endauth
+            @endif
         </ul>
     </nav>
 </header>

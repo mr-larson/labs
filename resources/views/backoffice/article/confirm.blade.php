@@ -22,11 +22,10 @@
                             <div class="grid grid-cols-1 overlay2 bg-purple-800 rounded shadow-lg mx-auto p-3 w-3/5 mb-4">
                                 <h2 class="post-title">{{ $article->h2 }}</h2>
                                 <div class="post-meta">
-                                    <a href="">{{ $article->user->nom }}</a>
-                                    <a href="">Design, Inspiration</a>
-                                    <a href="">2 Comments</a>
+                                    <img src="{{ 'img/' . $article->img }}" alt="">
+                                    <h4 class="card-title text-dark">{{ $article->user->nom }}</h4>
+                                    <p class="card-text text-dark">{{ $article->p }}</p>
                                 </div>
-                                <p>{!! str_replace(["/"], ["<br>"], $article->p) !!}</p>
                             </div>
 						</div>
                         <label class="text-white text-base">Validité d'un article</label>
@@ -39,4 +38,5 @@
             @endforeach
         </section>
     </x-app-layout>
+
 @endsection

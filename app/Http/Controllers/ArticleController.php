@@ -58,11 +58,16 @@ class ArticleController extends Controller
         $article->h2 = $request->h2;
         $article->p = $request->p;
         $article->user_id = Auth::user()->id;
-        $article->confirm = "0";
 
         if ($request->file("img") !== null) {
             $article->img = $request->file("img")->hashName();
             $request->file("img")->storePublicly("img/blog/", "public");
+        }
+
+        if (Auth::user()->role_id ===1 || Auth::user()->role_id ===2) {
+            $article->confirm = "1";
+        }else {
+            $article->confirm = "0";
         }
 
         $article->created_at = now();
@@ -129,6 +134,13 @@ class ArticleController extends Controller
         
         $article->updated_at = now();
         $article->save();
+
+        if (Auth::user()->role_id ===1 || Auth::user()->role_id ===2) {
+            $article->confirm = "1";
+        }else {
+            $article->confirm = "0";
+        }
+
         $article->categories()->sync($request->categories);
         $article->tags()->sync($request->tags);
 

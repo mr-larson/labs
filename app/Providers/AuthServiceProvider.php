@@ -59,7 +59,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('user-edit', function () {
-            return in_array(Auth::user()->role_id, [1, 2]);
+            return in_array(Auth::user()->role_id, [1]);
         });
 
         Gate::define('map-edit', function () {
@@ -91,10 +91,10 @@ class AuthServiceProvider extends ServiceProvider
         });
         //Article
         Gate::define('article-create', function () {
-            return in_array(Auth::user()->role_id, [1, 2]);
+            return in_array(Auth::user()->role_id, [1, 2, 3]);
         });
         Gate::define('article-edit', function () {
-            return in_array(Auth::user()->role_id, [1, 2]);
+            return in_array(Auth::user()->role_id, [1, 2, 3]);
         });
         Gate::define('article-confirm', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
@@ -104,7 +104,7 @@ class AuthServiceProvider extends ServiceProvider
         });
         //Comment
         Gate::define('comment-create', function () {
-            return in_array(Auth::user()->role_id, [1, 2]);
+            return in_array(Auth::user()->role_id, [1, 2, 3, 4, 5]);
         });
         Gate::define('comment-edit', function () {
             return in_array(Auth::user()->role_id, [1, 2]);

@@ -33,7 +33,7 @@ Contenu du site: Front fourni par l'employeur<br>
 - Section Contact.
 
 Contenu du site: Back créer par moi-même<br>
-- dashboard contenu de chaque partie customisable.
+- dashboard, contenu de chaque partie customisable.
 - Chaque section possède un edit et/ou un create et un delete.
 
 Valeur du site: 3000€<br>
