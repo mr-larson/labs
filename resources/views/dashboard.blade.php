@@ -2,21 +2,22 @@
 @section('content')
     <x-app-layout class="" id="particles-js">
         <!-- nav -->
-        <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md"
-            id="particles-js">
-            <a href="{{ route('nav.index') }}" class="block ">
-                <div
-                    class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-green-300 hover:bg-green-400">
-                    <p class="text-white text-3xl">Navbar</p>
-                    <p class="text-white opacity-50 font-light py-3">Gérer les noms dans la navbar</p>
-                </div>
-            </a>
+        <div class="mx-8 grid grid-cols-1 p-6 gap-1">
+            <div class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md"
+                id="particles-js">
+                <a href="{{ route('nav.index') }}" class="block ">
+                    <div
+                        class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-green-300 hover:bg-green-400">
+                        <p class="text-white text-3xl">Navbar</p>
+                        <p class="text-white opacity-50 font-light py-3">Gérer les noms dans la navbar</p>
+                    </div>
+                </a>
+            </div>
         </div>
         <!-- nav end -->
         <div class="mt-8 mx-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-6 gap-3">
             <!-- Titre -->
-            <div
-                class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
+            <div class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
                 <a href="{{ route('titre.index') }}" class="block ">
                     <div
                         class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
@@ -129,26 +130,18 @@
                 </a>
             </div>
             <!-- article end -->
-            <!-- article -->
+            <!-- confirm -->
             <div
                 class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
-                <a href="{{ route('article.index') }}" class="block ">
+                <a href="{{-- {{ route('article.confirm', $articles->id) }} --}}" class="block ">
                     <div
                         class="rounded overflow-hidden shadow-lg py-14 flex flex-col justify-center align-center items-center overlay2 bg-purple-600 hover:bg-purple-800">
-                        <p class="text-white text-3xl">article</p>
-                        <p class="text-white opacity-50 font-light py-3">Gérer la section article</p>
-                    </div>
-                    <div class="buttons flex justify-center">
-                        @can('create', App\models\Article::class)
-                            <div class=" flex justify-center my-2">
-                                <a class="font-bold py-2 px-4 m-6 rounded shadow bg-gradient-to-r from-green-400 to-purple-500 hover:text-purple-300 text-white"
-                                    href="/article/create">+ Create</a>
-                            </div>
-                        @endcan
+                        <p class="text-white text-3xl">Confirmation</p>
+                        <p class="text-white opacity-50 font-light py-3">Confirmation des articles</p>
                     </div>
                 </a>
             </div>
-            <!-- article end -->
+            <!-- confirm end -->
             <!-- Commentaire -->
             <div
                 class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
@@ -222,6 +215,8 @@
                 </a>
             </div>
             <!-- video end -->
+        </div>
+        <div class="mx-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 p-6 gap-2">
             <!-- map -->
             <div
                 class="m-2 p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
@@ -240,7 +235,7 @@
                                     text-align: right;
                                     height: 600px;
                                 }
-
+    
                             </style>
                             <a href="https://www.embedgooglemap.net/%22%3Eembedgooglemap.net"></a>
                             <style>
@@ -249,7 +244,7 @@
                                     background: none !important;
                                     height: 150px;
                                 }
-
+    
                             </style>
                         </div>
                     </div>
@@ -274,7 +269,7 @@
                             <p class="con-item">{{ $adresse->rue }}, {{ $adresse->num }} <br> {{ $adresse->code }}
                                 {{ $adresse->ville }} </p>
                             <p class="con-item">{{ $adresse->phone }}</p>
-                            <p class="con-item">{{ $adresse->email }}</p>
+                            <p class="con-item mb-10">{{ $adresse->email }}</p>
                         </div>
                     </div>
                     <div class="buttons flex justify-center">
@@ -289,7 +284,7 @@
         </div>
 
         <!-- footer -->
-        <div class="mt-8 mx-4">
+        <div class="mx-8 grid grid-cols-1 p-6 gap-1">
             <div
                 class="p-4 bg-blue-50 dark:bg-gray-800 dark:text-gray-50 border border-blue-500 dark:border-gray-500 rounded-lg shadow-md">
                 <a href="{{ route('footer.index') }}" class="block ">

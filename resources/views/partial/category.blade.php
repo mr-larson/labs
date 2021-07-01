@@ -1,3 +1,9 @@
+@extends('layouts.appFront')
+
+@section('content')
+    @include('partial.preloder')
+    @include('partial.nav')
+
 <!-- Page header -->
 <div class="page-top-section">
     <div class="overlay"></div>
@@ -17,8 +23,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-sm-7 blog-posts">
-                @foreach ($articles->slice(0,3) as $article)
-                    {{-- @if ($article->confirm === 1) --}}
+                @foreach ($category->articles as $article)
+                    @if ($article->confirm === 1)
                         <!-- Post item -->
                         <div class="post-item">
                             <div class="post-thumbnail">
@@ -84,12 +90,12 @@
                                     @php
                                         $i=0;
                                     @endphp
-                                    <a href="">@foreach ($article->tags as $tag)
-                                                @if ($article->tags->count()==$i+1)
+                                    <a href="">@foreach ($article->categories as $category)
+                                                @if ($article->categories->count()==$i+1)
                                                     
-                                                    {{ $tag->name }}
+                                                    {{ $category->name }}
                                                 @else  
-                                                    {{ $tag->name . " ," }}
+                                                    {{ $category->name . " ," }}
                                                 @endif
                                                     @php
                                                     $i+=1;
@@ -102,7 +108,7 @@
                                 <a href="{{ route('article.show', $article) }}" class="read-more">Read More</a>
                             </div>
                         </div>
-                    {{-- @endif --}}
+                    @endif
                 @endforeach
                 <!-- Post item end -->
 
@@ -115,9 +121,9 @@
             <div class="col-md-4 col-sm-5 sidebar">
                 <!-- Single widget -->
                 <div class="widget-item">
-                    <form action="/blog/search" method="GET" class="search-form">
-                        <input type="text" placeholder="Search" name="search">
-                        <button type="submit" class="search-btn"><i class="flaticon-026-search"></i></button>
+                    <form action="#" class="search-form">
+                        <input type="text" placeholder="Search">
+                        <button class="search-btn"><i class="flaticon-026-search"></i></button>
                     </form>
                 </div>
                 <!-- Single widget -->
@@ -133,8 +139,8 @@
                 </div>
                 <!-- Single widget -->
                 <div class="widget-item">
-                    <h2 class="widget-title">Tags</h2>
-                    <ul class="tag">
+                    <h2 class="widget-title">tags</h2>
+                    <ul class="category">
                         @foreach ($tags as $tag )
 								<li><a href="{{ route('tag.show', $tag) }}">
 									{{ $tag->name }}
@@ -164,3 +170,7 @@
     </div>
 </div>
 <!-- page section end-->
+
+@include('partial.serviceNewsletter')
+@include('partial.footer')
+@endsection

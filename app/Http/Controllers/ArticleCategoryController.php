@@ -46,7 +46,7 @@ class ArticleCategoryController extends Controller
      */
     public function show(article_category $article_category)
     {
-        //
+        
     }
 
     /**

@@ -102,5 +102,18 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('article-confirmed', function () {
             return in_array(Auth::user()->role_id, [1, 2]);
         });
+        //Comment
+        Gate::define('comment-create', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+        Gate::define('comment-edit', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+        Gate::define('comment-confirm', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
+        Gate::define('comment-confirmed', function () {
+            return in_array(Auth::user()->role_id, [1, 2]);
+        });
     }
 }

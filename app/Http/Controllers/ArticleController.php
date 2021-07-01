@@ -62,12 +62,14 @@ class ArticleController extends Controller
 
         if ($request->file("img") !== null) {
             $article->img = $request->file("img")->hashName();
-            $request->file("img")->storePublicly("img", "public");
+            $request->file("img")->storePublicly("img/blog/", "public");
         }
 
         $article->created_at = now();
         
         $article->save();
+        $article->categories()->attach($request->categories);
+        $article->tags()->attach($request->tags);
         FacadesNotification::send(Newsletter::all(), new NotificationsNewsletter($article));
         return redirect()->route('article.index', compact('article'))->with("message", "L'article a bien été crée.");
     }
@@ -127,6 +129,8 @@ class ArticleController extends Controller
         
         $article->updated_at = now();
         $article->save();
+        $article->categories()->sync($request->categories);
+        $article->tags()->sync($request->tags);
 
         return redirect()->route("article.index")->with("successMessage", "Votre article à bien été ajouté");
     }
@@ -141,6 +145,8 @@ class ArticleController extends Controller
     {
         $this->authorize('delete', $article);
         Storage::disk("public")->delete("img/" .$article->img);
+        $article->tags()->detach();
+        $article->categories()->detach();
         $article->delete();
 
         return redirect()->back();

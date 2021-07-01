@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdresseController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\FooterController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\NavController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TitreController;
 use App\Http\Controllers\UserController;
@@ -34,6 +36,7 @@ use App\Models\Testimonial;
 use App\Models\Titre;
 use App\Models\User;
 use App\Models\Video;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -115,6 +118,22 @@ Route::get('/contact', function () {
     return view('contact',compact('users','nav','footer', 'link', 'titres', 'adresse', 'images', 'map'));
 })->name('contact');
 
+Route::get("/blog/search", function(Request $request){
+    $articles = Article::query()->where("h2","LIKE","%{$request->search}%")->paginate(3);
+    $users = User::paginate();
+    $images = Image::all(); 
+    $titres = Titre::all();
+    $link = Link::first();
+    $nav = Nav::all();
+    $footer = Footer::first(); 
+    $adresse = Adresse::first();
+    $categories = Category::all();
+    $tags = Tag::all();
+    $comments = Comment::all();
+    /* $categories = Categorie::all();  */
+    return view('blog',compact('users','nav','footer', 'link', 'titres', 'adresse', 'images', 'articles', 'comments','tags', 'categories'));
+});
+
 Route::get('/dashboard', function () {
     $users = User::paginate();
     $titres = Titre::all();
@@ -172,14 +191,21 @@ Route::resource("/map", MapController::class)->middleware(['auth']);
 
 //Blog
 // Articles
-Route::resource("/article", ArticleController::class)->middleware(['auth']);
+Route::resource("/article", ArticleController::class);
 // confirm
 Route::get("/confirm", [ArticleController::class, 'confirm'])->middleware(['auth']);
 // confirmed
 Route::post("/confirmed/{id}", [ArticleController::class, 'confirmed'])->middleware(['auth']);
 // Comment
 Route::resource("/comment", CommentController::class)->middleware(['auth']);
-
+// confirm
+Route::get("/confirm", [CommentController::class, 'confirm'])->middleware(['auth']);
+// confirmed
+Route::post("/confirmed/{id}", [CommentController::class, 'confirmed'])->middleware(['auth']);
+// Tag
+Route::resource("/tag", TagController::class);
+// Category
+Route::resource("/category", CategoryController::class);
 
 
 //Route pour l'email (Contact.blade.php)

@@ -23,7 +23,7 @@
                 position: relative;
                 text-align: right;
                 height: 460px;
-                width: 100vw
+                width: 100vw;
             }
 
             .gmap_canvas, #gmap_canvas {

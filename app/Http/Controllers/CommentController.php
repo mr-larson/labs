@@ -15,7 +15,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        $comments = Comment::paginate(4);
+        return view("backoffice.comment.all", compact("comments"));
     }
 
     /**
@@ -25,7 +26,8 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize("comment-create", Comment::class);
+        return view('backoffice.comment.create');
     }
 
     /**
@@ -72,7 +74,8 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        //
+        $this->authorize("comment-edit", $comment);
+        return view("backoffice.comment.edit", compact("comment"));
     }
 
     /**
@@ -84,7 +87,19 @@ class CommentController extends Controller
      */
     public function update(Request $request, Comment $comment)
     {
-        //
+        $request->validate([
+            'p'=>'required',
+        ]);
+
+        $comment->p = $request->p;
+        $comment->user_id = Auth::user()->id;
+        $comment->article_id = $request->article_id;
+        
+        $comment->updated_at = now();
+        
+        $comment->save();
+
+        return redirect()->back()->with("message", "Le commentaire a bien été crée.");
     }
 
     /**
@@ -95,7 +110,25 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
+        $this->authorize('delete', $comment);
         $comment->delete();
+        return redirect()->back();
+    }
+    public function confirm()
+    {
+        $comments=Comment::all();
+        $this->authorize('comment-confirm', $comments);
+        return view("backoffice.comment.confirm", compact("comments"));
+    }
+    public function confirmed($id)
+    {
+        $comment = Comment::find($id);
+
+        $comment->confirm = "1";
+
+        $comment->updated_at = now();
+        $comment->save();
+
         return redirect()->back();
     }
 }

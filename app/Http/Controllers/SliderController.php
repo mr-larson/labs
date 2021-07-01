@@ -26,7 +26,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        $this->authorize("slider-create", slider::class);
+        $this->authorize("slider-create", Slider::class);
         return view('backoffice.slider.create');
     }
 
